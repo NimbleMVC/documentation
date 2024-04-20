@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Response - NimblePHP</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Response";
+        var mkdocs_page_input_path = "documentation/response.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> NimblePHP
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">NimblePHP</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../required/">Wymagania</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../how-start/">Jak zacząć</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../default-config/">Domyślna konfiguracja</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../exceptions/">Wyjątki</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dokumentacja</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../controller/">Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../model/">Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../view/">View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../config/">Config</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../log/">Log</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../request/">Request</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Response</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#namespace">Namespace</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#zmienne">Zmienne</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#metody">Metody</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#__construct">__construct</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getcontent">getContent</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#setcontent">setContent</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getstatuscode">getStatusCode</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#setstatuscode">setStatusCode</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#addheader">addHeader</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#send">send</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../route/">Route</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">NimblePHP</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Dokumentacja</li>
+      <li class="breadcrumb-item active">Response</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="response">Response</h1>
+<p>Klasa służy do obsługi odpowiedzi HTTP.</p>
+<h2 id="namespace">Namespace</h2>
+<p>Klasa:</p>
+<pre><code class="language-PHP">Nimblephp\framework\Response
+</code></pre>
+<p>Interface:</p>
+<pre><code class="language-PHP">Nimblephp\framework\Interfaces\ResponseInterface
+</code></pre>
+<h2 id="zmienne">Zmienne</h2>
+<ul>
+<li><strong>protected mixed $content</strong>: Treść odpowiedzi, może być różnego typu.</li>
+<li><strong>protected int $statusCode = 200</strong>: Kod statusu HTTP odpowiedzi, domyślnie 200.</li>
+<li><strong>protected array $headers = []</strong>: Tablica nagłówków HTTP odpowiedzi.</li>
+<li><strong>protected string $statusText = ''</strong>: Tekstowy opis kodu statusu HTTP.</li>
+</ul>
+<h2 id="metody">Metody</h2>
+<h3 id="__construct">__construct</h3>
+<pre><code class="language-PHP">__construct()
+</code></pre>
+<p>Konstruktor klasy, nie jest zdefiniowany w podanym kodzie.</p>
+<h3 id="getcontent">getContent</h3>
+<pre><code class="language-PHP">public function getContent(): string
+</code></pre>
+<p>Pobranie treści odpowiedzi.</p>
+<h3 id="setcontent">setContent</h3>
+<pre><code class="language-PHP">public function setContent(mixed $content): void
+</code></pre>
+<p>Ustawienie treści odpowiedzi.</p>
+<h3 id="getstatuscode">getStatusCode</h3>
+<pre><code class="language-PHP">public function getStatusCode(): int
+</code></pre>
+<p>Pobranie kodu statusu HTTP.</p>
+<h3 id="setstatuscode">setStatusCode</h3>
+<pre><code class="language-PHP">public function setStatusCode(int $code, string $text = ''): void
+</code></pre>
+<p>Ustawienie kodu statusu HTTP i opcjonalnie tekstowego opisu.</p>
+<h3 id="addheader">addHeader</h3>
+<pre><code class="language-PHP">public function addHeader(string $name, string $value): void
+</code></pre>
+<p>Dodanie nagłówka HTTP do odpowiedzi.</p>
+<h3 id="send">send</h3>
+<pre><code class="language-PHP">public function send(): void
+</code></pre>
+<p>Wysłanie odpowiedzi do klienta, wraz z nagłówkami i treścią.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../request/" class="btn btn-neutral float-left" title="Request"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../route/" class="btn btn-neutral float-right" title="Route">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../request/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../route/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
