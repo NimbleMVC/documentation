@@ -62,6 +62,14 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#wyjatek-nie-znaleziono">Wyjątek "nie znaleziono"</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ukryty-wyjatek">Ukryty wyjątek</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#gethiddenmessage">getHiddenMessage</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#wyjatek-bazodanowy">Wyjątek bazodanowy</a>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -82,6 +90,23 @@
                   <li class="toctree-l1"><a class="reference internal" href="../documentation/response/">Response</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../documentation/route/">Route</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Rozszerzenia</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Twig</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../extension/twig/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../extension/twig/view/">View</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../extension/twig/twig/">Twig</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
                   </li>
               </ul>
       </div>
@@ -124,6 +149,33 @@
 </code></pre>
 <p>Konstruktor:</p>
 <pre><code class="language-PHP">public function __construct(string $message = &quot;Not found&quot;, int $code = 404, ?Throwable $previous = null)
+</code></pre>
+<h2 id="ukryty-wyjatek">Ukryty wyjątek</h2>
+<p>Wyjątek zwraca błąd ale ukrywa treść dla klienta</p>
+<p>Namespace:</p>
+<pre><code class="language-PHP">Nimblephp\framework\Exception\HiddenException
+</code></pre>
+<p>Rodzic:</p>
+<pre><code class="language-php">Nimblephp\framework\Exception\NimbleException
+</code></pre>
+<p>Konstruktor:</p>
+<pre><code class="language-PHP">public function __construct(string $message = &quot;System error&quot;, int $code = 500, ?Throwable $previous = null)```
+</code></pre>
+<p>Metody:</p>
+<h3 id="gethiddenmessage">getHiddenMessage</h3>
+<pre><code class="language-PHP">public function loadModel(string $name): AbstractModel
+</code></pre>
+<p>Zwraca ukrytą treść</p>
+<h2 id="wyjatek-bazodanowy">Wyjątek bazodanowy</h2>
+<p>Wyjątek dla błędów bazy danych</p>
+<p>Namespace:</p>
+<pre><code class="language-PHP">Nimblephp\framework\Exception\DatabaseException
+</code></pre>
+<p>Rodzic:</p>
+<pre><code class="language-php">Nimblephp\framework\Exception\HiddenException
+</code></pre>
+<p>Konstruktor:</p>
+<pre><code class="language-PHP">public function __construct(string $message = &quot;Database error&quot;, int $code = 500, ?Throwable $previous = null)
 </code></pre>
               
             </div>
