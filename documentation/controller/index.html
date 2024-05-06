@@ -415,6 +415,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#afterconstruct" class="md-nav__link">
+    <span class="md-ellipsis">
+      afterConstruct
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -457,48 +466,6 @@
   
   <span class="md-ellipsis">
     View
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../config/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Config
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../log/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Log
   </span>
   
 
@@ -583,6 +550,90 @@
   
   <span class="md-ellipsis">
     Kernel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cookie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cookie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../session/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Session
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../log/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Log
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Config
   </span>
   
 
@@ -932,6 +983,134 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Form
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            Form
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extension/form/start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalacja
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3_2" id="__nav_7_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dokumentacja
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Dokumentacja
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extension/form/form/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Form
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1007,6 +1186,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#afterconstruct" class="md-nav__link">
+    <span class="md-ellipsis">
+      afterConstruct
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1035,12 +1223,18 @@
 <ul>
 <li><strong>public string $name</strong>: Nazwa załadowanego kontrolera.</li>
 <li><strong>public string $action</strong>: Nazwa wywołanej akcji.</li>
+<li><strong>public ResponseInterface $response;</strong>: Instancja Response</li>
+<li><strong>public RequestInterface $request;</strong>: Instancja Request</li>
 </ul>
 <h2 id="metody">Metody</h2>
 <h3 id="loadmodel">loadModel</h3>
 <pre><code class="language-PHP">public function loadModel(string $name): AbstractModel
 </code></pre>
 <p>Metoda loadModel służy do ładowania modelu na podstawie podanej nazwy.</p>
+<h2 id="afterconstruct">afterConstruct</h2>
+<pre><code class="language-PHP">public function afterConstruct(): void
+</code></pre>
+<p>Metoda jest inicjowania po utworzeniu i skonfigurowaniu kontrolera w metodze loadController w Kernel</p>
 
 
 
