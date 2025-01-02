@@ -683,27 +683,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../config/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Config
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../middleware/" class="md-nav__link">
         
   
@@ -725,11 +704,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../moduleRegister/" class="md-nav__link">
+      <a href="../module_register/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     ModuleRegister
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage
   </span>
   
 
@@ -905,6 +905,133 @@
   
   <span class="md-ellipsis">
     Twig
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extension/twig/template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Template
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1_3" id="__nav_7_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Funkcje
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Funkcje
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extension/twig/functions/action/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Action
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extension/twig/functions/js/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extension/twig/functions/view/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View
   </span>
   
 
@@ -1162,6 +1289,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../extension/form/validations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Walidacje
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -1170,10 +1318,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_7_3_2" id="__nav_7_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7_3_3" id="__nav_7_3_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1184,8 +1332,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_3_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3_3">
             <span class="md-nav__icon md-icon"></span>
             Dokumentacja
           </label>
@@ -1417,6 +1565,7 @@
 <li><strong>protected int $statusCode = 200</strong>: Kod statusu HTTP odpowiedzi, domyślnie 200.</li>
 <li><strong>protected array $headers = []</strong>: Tablica nagłówków HTTP odpowiedzi.</li>
 <li><strong>protected string $statusText = ''</strong>: Tekstowy opis kodu statusu HTTP.</li>
+<li><strong>protected RequestInterface $request</strong>: Instancja klasy Request</li>
 </ul>
 <h2 id="metody">Metody</h2>
 <h3 id="__construct">__construct</h3>
@@ -1444,13 +1593,20 @@
 </code></pre>
 <p>Dodanie nagłówka HTTP do odpowiedzi.</p>
 <h3 id="send">send</h3>
-<pre><code class="language-PHP">public function send(): void
+<pre><code class="language-PHP">public function send(bool $flush = false): void
 </code></pre>
 <p>Wysłanie odpowiedzi do klienta, wraz z nagłówkami i treścią.</p>
+<p><code>$flush</code> - pozwala od razu zwrócić treść wraz z exitem i wyczyszczeniem poprzedniej treści</p>
 <h3 id="redirect">redirect</h3>
 <pre><code class="language-php">public function redirect(string $url, int $statusCode = 302): never
 </code></pre>
-<p>Przekierowanie na inną stronę</p>
+<p>Przekierowanie na inną stronę.</p>
+<p>Jeżeli zapytanie jest ajaxowe, zwracana treść ze statusem 200 to:</p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;redirect&quot;,
+  &quot;url&quot;: &quot;&lt;url&gt;&quot;
+}
+</code></pre>
 
 
 
