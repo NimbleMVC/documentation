@@ -116,6 +116,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../extension/twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Migrations</a>
@@ -152,6 +158,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../extension/table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../extension/table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../extension/table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../extension/table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../extension/table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -178,29 +202,26 @@
               
                 <h1 id="jak-zaczac">Jak zacząć</h1>
 <p>Na samym początku należy zaimportować repozytorium composer</p>
-<div class="codehilite"><pre><span></span><code>composer<span class="w"> </span>require<span class="w"> </span>nimblephp/framework
-</code></pre></div>
-
+<pre><code class="language-Bash">composer require nimblephp/framework
+</code></pre>
 <p>Następnie należy utworzyć folder <code>public</code> a w nim plik <code>index.php</code> o treści:</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?php</span>
+<pre><code class="language-PHP">&lt;?php
 
-<span class="k">require</span><span class="p">(</span><span class="s1">&#39;../vendor/autoload.php&#39;</span><span class="p">);</span>
+require('../vendor/autoload.php');
 
-<span class="nv">$route</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Nimblephp\framework\Route</span><span class="p">(</span><span class="k">new</span> <span class="nx">\Nimblephp\framework\Request</span><span class="p">());</span>
-<span class="nv">$kernel</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Nimblephp\framework\Kernel</span><span class="p">(</span><span class="nv">$route</span><span class="p">);</span>
-<span class="nv">$kernel</span><span class="o">-&gt;</span><span class="na">handle</span><span class="p">();</span>
-</code></pre></div>
-
+$route = new \Nimblephp\framework\Route(new \Nimblephp\framework\Request());
+$kernel = new \Nimblephp\framework\Kernel($route);
+$kernel-&gt;handle();
+</code></pre>
 <p>oraz plik .htaccess z zawartością:</p>
-<div class="codehilite"><pre><span></span><code>RewriteEngine On
+<pre><code class="language-text">RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
-</code></pre></div>
-
+</code></pre>
 <p>Teraz należy uruchomić plik index.php, pierwsze uruchomienie spowoduje utworzenie folderów wymaganych przez projekt</p>
 <p>Aktualnie powinno wyglądać to tak:</p>
-<div class="codehilite"><pre><span></span><code>* folder_projektu
+<pre><code class="language-text">* folder_projektu
     * public
         * index.php
         * .htaccess
@@ -211,8 +232,7 @@ RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
     * storage
         * logs
     * vendor
-</code></pre></div>
-
+</code></pre>
 <p>Teraz "podstawowa" wersja jest już stworzona i można zacząć pisać własną wirtynę.</p>
               
             </div>

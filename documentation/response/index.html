@@ -140,6 +140,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Migrations</a>
@@ -176,6 +182,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extension/table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -205,69 +229,59 @@
 <p>Klasa służy do obsługi odpowiedzi HTTP.</p>
 <h2 id="namespace">Namespace</h2>
 <p>Klasa:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Response</span>
-</code></pre></div>
-
-<p>Interface:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Interfaces\ResponseInterface</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\framework\Response
+</code></pre>
+<p>Interfejs:</p>
+<pre><code class="language-PHP">Nimblephp\framework\Interfaces\ResponseInterface
+</code></pre>
 <h2 id="zmienne">Zmienne</h2>
 <ul>
 <li><strong>protected mixed $content</strong>: Treść odpowiedzi, może być różnego typu.</li>
 <li><strong>protected int $statusCode = 200</strong>: Kod statusu HTTP odpowiedzi, domyślnie 200.</li>
 <li><strong>protected array $headers = []</strong>: Tablica nagłówków HTTP odpowiedzi.</li>
 <li><strong>protected string $statusText = ''</strong>: Tekstowy opis kodu statusu HTTP.</li>
-<li><strong>protected RequestInterface $request</strong>: Instancja klasy Request</li>
+<li><strong>protected <a href="/documentation/request/">RequestInterface</a> $request</strong>: Instancja klasy Request</li>
 </ul>
 <h2 id="metody">Metody</h2>
 <h3 id="__construct">__construct</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">__construct()</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">__construct()
+</code></pre>
 <p>Konstruktor klasy, nie jest zdefiniowany w podanym kodzie.</p>
 <h3 id="getcontent">getContent</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function getContent(): string</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function getContent(): string
+</code></pre>
 <p>Pobranie treści odpowiedzi.</p>
 <h3 id="setcontent">setContent</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function setContent(mixed $content): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function setContent(mixed $content): void
+</code></pre>
 <p>Ustawienie treści odpowiedzi.</p>
 <h3 id="getstatuscode">getStatusCode</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function getStatusCode(): int</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function getStatusCode(): int
+</code></pre>
 <p>Pobranie kodu statusu HTTP.</p>
 <h3 id="setstatuscode">setStatusCode</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function setStatusCode(int $code, string $text = &#39;&#39;): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function setStatusCode(int $code, string $text = ''): void
+</code></pre>
 <p>Ustawienie kodu statusu HTTP i opcjonalnie tekstowego opisu.</p>
 <h3 id="addheader">addHeader</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function addHeader(string $name, string $value): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function addHeader(string $name, string $value): void
+</code></pre>
 <p>Dodanie nagłówka HTTP do odpowiedzi.</p>
 <h3 id="send">send</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function send(bool $flush = false): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function send(bool $flush = false): void
+</code></pre>
 <p>Wysłanie odpowiedzi do klienta, wraz z nagłówkami i treścią.</p>
 <p><code>$flush</code> - pozwala od razu zwrócić treść wraz z exitem i wyczyszczeniem poprzedniej treści</p>
 <h3 id="redirect">redirect</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function redirect(string $url, int $statusCode = 302): never</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function redirect(string $url, int $statusCode = 302): never
+</code></pre>
 <p>Przekierowanie na inną stronę.</p>
 <p>Jeżeli zapytanie jest ajaxowe, zwracana treść ze statusem 200 to:</p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;redirect&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;url&gt;&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;redirect&quot;,
+  &quot;url&quot;: &quot;&lt;url&gt;&quot;
+}
+</code></pre>
               
             </div>
           </div><footer>

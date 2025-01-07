@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Config - NimblePHP</title>
+    <title>Load model method - NimblePHP</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Config";
-        var mkdocs_page_input_path = "documentation/config.md";
+        var mkdocs_page_name = "Load model method";
+        var mkdocs_page_input_path = "include/load_model_method.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -61,31 +61,31 @@
               </ul>
               <p class="caption"><span class="caption-text">Dokumentacja</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../controller/">Controller</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../documentation/controller/">Controller</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../model/">Model</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../documentation/model/">Model</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../view/">View</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../documentation/view/">View</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../request/">Request</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../documentation/request/">Request</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../response/">Response</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../documentation/response/">Response</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../route/">Route</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../documentation/route/">Route</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../kernel/">Kernel</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../documentation/kernel/">Kernel</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../cookie/">Cookie</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../documentation/cookie/">Cookie</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../session/">Session</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../documentation/session/">Session</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../log/">Log</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../documentation/log/">Log</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../middleware/">Middleware</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../documentation/middleware/">Middleware</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../module_register/">ModuleRegister</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../documentation/module_register/">ModuleRegister</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../storage/">Storage</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../documentation/storage/">Storage</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Rozszerzenia</span></p>
@@ -111,6 +111,12 @@
                 <li class="toctree-l3"><a class="reference internal" href="../../extension/twig/functions/js/">JS</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../extension/twig/functions/view/">View</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/twig/examples/example1/">Integracja strony z twig</a>
                 </li>
     </ul>
                 </li>
@@ -150,6 +156,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extension/table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -165,7 +189,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Dokumentacja"></a></li>
-      <li class="breadcrumb-item active">Config</li>
+      <li class="breadcrumb-item active">Load model method</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -174,7 +198,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h3 id="loadmodel">loadModel</h3>
+<pre><code class="language-PHP">public function loadModel(string $name): AbstractModel
+</code></pre>
+<div style="border: 1px solid #AAA; padding: 8px; margin-bottom: 8px;">
+<b>Argumenty</b><br />
+<b>string $name</b>: Nazwa modelu
+</div>
+
+<p>Metoda loadModel służy do ładowania modelu na podstawie podanej nazwy.</p>
+<p>Po załadowaniu modelu znajduje się on w tablicy <code>$models</code> oraz jest możliwość do odwołanai się do niego za pomocą zmiennej z CamelCase np.:</p>
+<pre><code class="language-php">$this-&gt;loadModel('testowy_model');
+// odwołanie do modelu
+$this-&gt;TestowyModel-&gt;...
+</code></pre>
               
             </div>
           </div><footer>

@@ -114,6 +114,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" >Migrations</a>
@@ -158,6 +164,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -185,50 +209,48 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="migracje">Migracje</h1>
-<p>Migraje uruchamiają skrypty SQL z folderu <code>migrations</code> z kolejnością w celu łatwego aktualizowania bazy danych</p>
+<p>Migraje uruchamiają skrypty SQL z folderu <code>migrations/</code> z kolejnością w celu łatwego aktualizowania bazy danych</p>
 <blockquote>
 <p>Migracje uruchamiane są w kolejności numerycznej od 1 do 9, dlatego ważnym jest nazywanie plików <code>.sql</code> numerycznie w kolejności uruchomienia od najmniejszego do największego</p>
 </blockquote>
 <h2 id="instalacja">Instalacja</h2>
-<div class="codehilite"><pre><span></span><code>composer<span class="w"> </span>require<span class="w"> </span>nimblephp/migrations
-</code></pre></div>
-
+<pre><code class="language-shell">composer require nimblephp/migrations
+</code></pre>
 <h2 id="uzycie">Użycie</h2>
 <ol>
-<li>W folderze projektu tworzymi plik <code>update.php</code> oraz folder <code>migrations</code></li>
+<li>W folderze projektu tworzymi plik <code>update.php</code> oraz folder <code>migrations/</code></li>
 <li>w pliku update.php wpisujemy następujący kod:</li>
 </ol>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?php</span>
+<pre><code class="language-php">&lt;?php
 
-<span class="k">include</span><span class="p">(</span><span class="s1">&#39;../vendor/autoload.php&#39;</span><span class="p">);</span>
+include('vendor/autoload.php');
 
-<span class="nv">$migrations</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Nimblephp\migrations\Migrations</span><span class="p">(</span><span class="no">__DIR__</span><span class="p">);</span>
-<span class="nv">$migrations</span><span class="o">-&gt;</span><span class="na">runMigrations</span><span class="p">();</span>
-</code></pre></div>
-
+$migrations = new \Nimblephp\migrations\Migrations(__DIR__);
+$migrations-&gt;runMigrations();
+</code></pre>
 <ol>
 <li>W folderze pliku <code>migrations</code> możemy utworzyć pliku <code>.sql</code> lub <code>.php</code> o nazwie odpowiadającej <code>timestamp</code> (bash: <code>date +%s</code>)</li>
 <li>Uruchamiamy plik <code>update.php</code> w konsoli (<code>php update.php</code>)</li>
 </ol>
 <h2 id="wyglad-pliku-php">Wygląd pliku PHP</h2>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?php</span>
+<pre><code class="language-php">&lt;?php
 
-<span class="k">use</span> <span class="nx">Nimblephp\migrations\AbstractMigration</span><span class="p">;</span>
+use Nimblephp\migrations\AbstractMigration;
 
-<span class="k">return</span> <span class="k">new</span> <span class="k">class</span> <span class="k">extends</span> <span class="nx">AbstractMigration</span> <span class="p">{</span>
+return new class extends AbstractMigration {
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">run</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="c1">//kod do wykonania</span>
-    <span class="p">}</span>
+    public function run()
+    {
+        //kod do wykonania
+    }
 
-<span class="p">};</span>
-</code></pre></div>
+};
+</code></pre>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Nawigacja w stopce">
-        <a href="../../twig/functions/view/" class="btn btn-neutral float-left" title="View"><span class="icon icon-circle-arrow-left"></span> Wstecz</a>
+        <a href="../../twig/examples/example1/" class="btn btn-neutral float-left" title="Integracja strony z twig"><span class="icon icon-circle-arrow-left"></span> Wstecz</a>
         <a href="../migrations/" class="btn btn-neutral float-right" title="Migrations">Dalej <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -252,7 +274,7 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../twig/functions/view/" style="color: #fcfcfc">&laquo; Wstecz</a></span>
+      <span><a href="../../twig/examples/example1/" style="color: #fcfcfc">&laquo; Wstecz</a></span>
     
     
       <span><a href="../migrations/" style="color: #fcfcfc">Dalej &raquo;</a></span>

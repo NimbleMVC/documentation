@@ -116,9 +116,15 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#zmienne">Zmienne</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#przykad">Przykład:</a>
+    <li class="toctree-l4"><a class="reference internal" href="#przykady">Przykłady</a>
     </li>
     </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../examples/example1/">Integracja strony z twig</a>
                 </li>
     </ul>
                 </li>
@@ -158,6 +164,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -188,26 +212,25 @@
                 <h1 id="funkcja-adowania-widoku">Funkcja ładowania widoku</h1>
 <p>Funkcja pozwala na załadowanie pliku widoku</p>
 <h2 id="metoda">Metoda</h2>
-<div class="codehilite"><pre><span></span><code><span class="x">view(string $controller, string $action, array $data): false|string</span>
-</code></pre></div>
-
+<pre><code class="language-php">view(string $controller, string $action, array $data): false|string
+</code></pre>
 <h2 id="zmienne">Zmienne</h2>
 <ul>
 <li><strong>$controller</strong>: nazwa kontrolera</li>
 <li><strong>$$action</strong>: nazwa akcji (metody)</li>
 <li><strong>$data</strong>: dane przesłne do widoku</li>
 </ul>
-<h2 id="przykad">Przykład:</h2>
+<h2 id="przykady">Przykłady</h2>
 <p>index.twig</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Table:</span>
-<span class="cp">{{</span> <span class="nv">view</span><span class="o">(</span><span class="s1">&#39;dashboard&#39;</span><span class="o">,</span> <span class="s1">&#39;menu&#39;</span><span class="o">,</span> <span class="o">{</span><span class="s1">&#39;name&#39;</span><span class="o">:</span> <span class="s1">&#39;value&#39;</span><span class="o">})</span> <span class="cp">}}</span>
-</code></pre></div>
+<pre><code class="language-twig">Table:
+{\{ view('dashboard', 'menu', {'name': 'value'}) }}
+</code></pre>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Nawigacja w stopce">
         <a href="../js/" class="btn btn-neutral float-left" title="JS"><span class="icon icon-circle-arrow-left"></span> Wstecz</a>
-        <a href="../../../migrations/start/" class="btn btn-neutral float-right" title="Instalacja">Dalej <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../examples/example1/" class="btn btn-neutral float-right" title="Integracja strony z twig">Dalej <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -233,7 +256,7 @@
       <span><a href="../js/" style="color: #fcfcfc">&laquo; Wstecz</a></span>
     
     
-      <span><a href="../../../migrations/start/" style="color: #fcfcfc">Dalej &raquo;</a></span>
+      <span><a href="../../examples/example1/" style="color: #fcfcfc">Dalej &raquo;</a></span>
     
   </span>
 </div>

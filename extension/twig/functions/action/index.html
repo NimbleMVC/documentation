@@ -112,13 +112,19 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#zmienne">Zmienne</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#przykad">Przykład:</a>
+    <li class="toctree-l4"><a class="reference internal" href="#przykady">Przykłady</a>
     </li>
     </ul>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../js/">JS</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../view/">View</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../examples/example1/">Integracja strony z twig</a>
                 </li>
     </ul>
                 </li>
@@ -158,6 +164,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -188,20 +212,19 @@
                 <h1 id="funkcja-akcji">Funkcja akcji</h1>
 <p>Funkcja pozwala na wykonanie zapytania do kontrolera bezpośrednio w twig, pozwala to na doładowywania osobnych widoków do już istniejącego wydoku.</p>
 <h2 id="metoda">Metoda</h2>
-<div class="codehilite"><pre><span></span><code><span class="x">action(string $controller, string $method, string ...$params): false|string</span>
-</code></pre></div>
-
+<pre><code class="language-php">action(string $controller, string $method, string ...$params): false|string
+</code></pre>
 <h2 id="zmienne">Zmienne</h2>
 <ul>
 <li><strong>$controller</strong>: nazwa kontrolera</li>
 <li><strong>$method</strong>: nazwa metody</li>
 <li><strong>...$params</strong>: dodatkowe przesłane parametry</li>
 </ul>
-<h2 id="przykad">Przykład:</h2>
+<h2 id="przykady">Przykłady</h2>
 <p>index.twig</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Table:</span>
-<span class="cp">{{</span> <span class="nv">action</span><span class="o">(</span><span class="s1">&#39;tables&#39;</span><span class="o">,</span> <span class="s1">&#39;main&#39;</span><span class="o">)</span> <span class="cp">}}</span>
-</code></pre></div>
+<pre><code class="language-twig">Table:
+{\{ action('tables', 'main') }}
+</code></pre>
               
             </div>
           </div><footer>

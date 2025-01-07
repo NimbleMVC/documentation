@@ -114,6 +114,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Migrations</a>
@@ -164,6 +170,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -194,40 +218,35 @@
 <p>Możliwe gotowe walidacje</p>
 <h2 id="uzywanie-walidacji-w-formularzu">Używanie walidacji w formularzu</h2>
 <p>Walidacje generowane są w następujący sposób:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">$form = new Form();</span>
-<span class="x">$form-&gt;addInput(&#39;name/name&#39;, &#39;Title&#39;);</span>
-<span class="x">$form-&gt;validation([</span>
-<span class="x">    &#39;name/name&#39; =&gt; [</span>
-<span class="x">        &#39;required&#39;,</span>
-<span class="x">        function($value) {</span>
-<span class="x">            if ($value !== &#39;test&#39;) {</span>
-<span class="x">                throw new ValidationException(&#39;Custom validation&#39;);</span>
-<span class="x">            }</span>
-<span class="x">        }</span>
-<span class="x">    ]</span>
-<span class="x">]);</span>
-</code></pre></div>
-
+<pre><code class="language-php">$form = new Form();
+$form-&gt;addInput('name/name', 'Title');
+$form-&gt;validation([
+    'name/name' =&gt; [
+        'required',
+        function($value) {
+            if ($value !== 'test') {
+                throw new ValidationException('Custom validation');
+            }
+        }
+    ]
+]);
+</code></pre>
 <p>Teraz przy wywołaniu formularza walidacja zostanie wyświetlona</p>
 <h2 id="pole-wymagane-nie-moze-byc-puste">Pole wymagane, nie może być puste</h2>
-<div class="codehilite"><pre><span></span><code>required
-</code></pre></div>
-
+<pre><code>required
+</code></pre>
 <h2 id="minimalna-ilosc-znakow">Minimalna ilość znaków</h2>
-<div class="codehilite"><pre><span></span><code>length_min =&gt; &#39;&lt;int&gt;&#39;
-</code></pre></div>
-
+<pre><code>length_min =&gt; '&lt;int&gt;'
+</code></pre>
 <h2 id="maksymalna-ilosc-znakow">Maksymalna ilość znaków</h2>
-<div class="codehilite"><pre><span></span><code>length_max =&gt; &#39;&lt;int&gt;&#39;
-</code></pre></div>
-
+<pre><code>length_max =&gt; '&lt;int&gt;'
+</code></pre>
 <h2 id="czy-pole-zawiera-adres-e-mail">Czy pole zawiera adres e-mail</h2>
-<div class="codehilite"><pre><span></span><code>is_email
-</code></pre></div>
-
+<pre><code>is_email
+</code></pre>
 <h2 id="czy-wartosc-pola-to-liczba">Czy wartość pola to liczba</h2>
-<div class="codehilite"><pre><span></span><code>is_integer
-</code></pre></div>
+<pre><code>is_integer
+</code></pre>
               
             </div>
           </div><footer>

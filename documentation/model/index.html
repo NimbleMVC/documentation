@@ -152,6 +152,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Migrations</a>
@@ -188,6 +194,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extension/table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -217,101 +241,95 @@
 <p>Model to główna część systemu odpowiadająca za logikę biznesową i zarządzanie danymi. Jego zadaniem jest przechowywanie danych, ich przetwarzanie i dostarczanie ich w odpowiedniej formie do kontrolera.</p>
 <h2 id="namespace">Namespace</h2>
 <p>Klasa:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Model</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\framework\Model
+</code></pre>
 <p>Abstract:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Abstracts\AbstractModel</span>
-</code></pre></div>
-
-<p>Interface:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Interfaces\ModelInterface</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\framework\Abstracts\AbstractModel
+</code></pre>
+<p>Interfejs:</p>
+<pre><code class="language-PHP">Nimblephp\framework\Interfaces\ModelInterface
+</code></pre>
 <h2 id="zmienne">Zmienne</h2>
 <ul>
 <li><strong>public null|string|false $useTable</strong>: Nazwa tabeli w bazie danych używana przez model, <code>null</code> oznacza automatyczne ustalenie nazwy, <code>false</code> deaktywuje działanie z bazą danych.</li>
 <li><strong>public string $name</strong>: Nazwa modelu.</li>
 <li><strong>public array $models</strong>: Lista załadowanych modeli.</li>
-<li><strong>public ControllerInterface $controller</strong>: Instancja kontrolera który załadował model</li>
-<li><strong>protected Table $table</strong>: Instancja tabeli obsługującej operacje na bazie danych.</li>
+<li><strong>public <a href="/documentation/controller/">ControllerInterface</a> $controller</strong>: Instancja kontrolera który załadował model</li>
+<li><strong>protected <a href="https://github.com/krzysztofzylka/DatabaseManager/wiki/Table">Table</a> $table</strong>: Instancja tabeli obsługującej operacje na bazie danych.</li>
 <li><strong>protected ?int $id</strong>: Aktualne ID elementu w bazie danych.</li>
 </ul>
 <h2 id="metody">Metody</h2>
 <h3 id="create">create</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function create(array $data): bool</span>
-</code></pre></div>
-
-<p>Tworzy nowy rekord w bazie danych na podstawie dostarczonych danych. Rzuca <code>DatabaseException</code> jeśli operacja nie powiedzie się.</p>
+<pre><code class="language-PHP">public function create(array $data): bool
+</code></pre>
+<p>Tworzy nowy rekord w bazie danych na podstawie dostarczonych danych. Rzuca <a href="/exceptions/">DatabaseException</a> jeśli operacja nie powiedzie się.</p>
 <h3 id="read">read</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function read(?array $condition = null, ?array $columns = null, ?string $orderBy = null): array</span>
-</code></pre></div>
-
-<p>Zwraca pojedynczy rekord na podstawie podanych warunków. Rzuca <code>DatabaseException</code> przy błędzie.</p>
+<pre><code class="language-PHP">public function read(?array $condition = null, ?array $columns = null, ?string $orderBy = null): array
+</code></pre>
+<p>Zwraca pojedynczy rekord na podstawie podanych warunków. Rzuca <a href="/exceptions/">DatabaseException</a> przy błędzie.</p>
 <h3 id="readall">readAll</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function readAll(?array $condition = null, ?array $columns = null, ?string $orderBy = null, ?string $limit = null, ?string $groupBy = null): array</span>
-</code></pre></div>
-
-<p>Zwraca listę rekordów spełniających podane warunki. Rzuca <code>DatabaseException</code> przy błędzie.</p>
+<pre><code class="language-PHP">public function readAll(?array $condition = null, ?array $columns = null, ?string $orderBy = null, ?string $limit = null, ?string $groupBy = null): array
+</code></pre>
+<p>Zwraca listę rekordów spełniających podane warunki. Rzuca <a href="/exceptions/">DatabaseException</a> przy błędzie.</p>
 <h3 id="update">update</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function update(array $data): bool</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function update(array $data): bool
+</code></pre>
 <p>Aktualizuje rekord o danym ID, używając dostarczonych danych. Rzuca <code>DatabaseException</code> jeśli operacja nie powiedzie się.</p>
 <h3 id="delete">delete</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function delete(): bool</span>
-</code></pre></div>
-
-<p>Usuwa rekord o danym ID. Rzuca <code>DatabaseException</code> jeśli operacja nie powiedzie się.</p>
+<pre><code class="language-PHP">public function delete(): bool
+</code></pre>
+<p>Usuwa rekord o danym ID. Rzuca <a href="/exceptions/">DatabaseException</a> jeśli operacja nie powiedzie się.</p>
 <h3 id="count">count</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function count(?array $condition = null, ?string $groupBy = null): int</span>
-</code></pre></div>
-
-<p>Zliczenie ilości rekordów. Rzuca <code>DatabaseException</code> jeśli operacja nie powiedzie się.</p>
+<pre><code class="language-PHP">public function count(?array $condition = null, ?string $groupBy = null): int
+</code></pre>
+<p>Zliczenie ilości rekordów. Rzuca <a href="/exceptions/">DatabaseException</a> jeśli operacja nie powiedzie się.</p>
 <h3 id="isset">isset</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function isset(?array $condition = null): int</span>
-</code></pre></div>
-
-<p>Weryfikacja czy element istnieje. Rzuca <code>DatabaseException</code> jeśli operacja nie powiedzie się.</p>
+<pre><code class="language-PHP">public function isset(?array $condition = null): int
+</code></pre>
+<p>Weryfikacja czy element istnieje. Rzuca <a href="/exceptions/">DatabaseException</a> jeśli operacja nie powiedzie się.</p>
 <h3 id="query">query</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function query(?string $sql): array</span>
-</code></pre></div>
-
-<p>Wykonanie kodu SQL. Rzuca <code>DatabaseException</code> jeśli operacja nie powiedzie się.</p>
+<pre><code class="language-PHP">public function query(?string $sql): array
+</code></pre>
+<p>Wykonanie kodu SQL. Rzuca <a href="/exceptions/">DatabaseException</a> jeśli operacja nie powiedzie się.</p>
 <h3 id="getid">getId</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function getId(): ?int</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function getId(): ?int
+</code></pre>
 <p>Zwraca ID aktualnie zarządzanego elementu.</p>
 <h3 id="setid">setId</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function setId(?int $id = null): ModelInterface</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function setId(?int $id = null): ModelInterface
+</code></pre>
 <p>Ustawia ID dla aktualnie zarządzanego elementu, zwraca samą siebie.</p>
 <h3 id="preparetableinstance">prepareTableInstance</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function prepareTableInstance(): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function prepareTableInstance(): void
+</code></pre>
 <p>Przygotowuje instancję tabeli, na której będą wykonywane operacje.</p>
 <h3 id="gettableinstance">getTableInstance</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function getTableInstance(): Table</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function getTableInstance(): Table
+</code></pre>
 <p>Pobranie instancji tabeli</p>
 <h3 id="loadmodel">loadModel</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function loadModel(string $name): AbstractModel</span>
-</code></pre></div>
+<pre><code class="language-PHP">public function loadModel(string $name): AbstractModel
+</code></pre>
+<div style="border: 1px solid #AAA; padding: 8px; margin-bottom: 8px;">
+<b>Argumenty</b><br />
+<b>string $name</b>: Nazwa modelu
+</div>
 
 <p>Metoda loadModel służy do ładowania modelu na podstawie podanej nazwy.</p>
 <p>Po załadowaniu modelu znajduje się on w tablicy <code>$models</code> oraz jest możliwość do odwołanai się do niego za pomocą zmiennej z CamelCase np.:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">$this-&gt;loadModel(&#39;testowy_model&#39;);</span>
-<span class="x">// odwołanie do modelu</span>
-<span class="x">$this-&gt;TestowyModel-&gt;...</span>
-</code></pre></div>
-
+<pre><code class="language-php">$this-&gt;loadModel('testowy_model');
+// odwołanie do modelu
+$this-&gt;TestowyModel-&gt;...
+</code></pre>
 <h3 id="log">log</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function log(string $message, string $level = &#39;INFO&#39;, array $content = []): bool</span>
-</code></pre></div>
+<pre><code class="language-php">public function log(string $message, string $level = 'INFO', array $content = []): bool
+</code></pre>
+<div style="border: 1px solid #AAA; padding: 8px; margin-bottom: 8px;">
+<b>Argumenty</b><br />
+<b>string $message</b>: Treść loga<br />
+<b>string $level = 'INFO'</b>: Poziom loga<br />
+<b>array $content = []</b>: Dodatkowe dane loga<br />
+</div>
 
 <p>Dodanie loga</p>
               

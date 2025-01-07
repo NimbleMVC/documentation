@@ -64,7 +64,11 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#ukryty-wyjatek">Ukryty wyjątek</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#gethiddenmessage">getHiddenMessage</a>
+    <li class="toctree-l3"><a class="reference internal" href="#metody">Metody</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#gethiddenmessage">getHiddenMessage</a>
+    </li>
+        </ul>
     </li>
         </ul>
     </li>
@@ -128,6 +132,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../extension/twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Migrations</a>
@@ -164,6 +174,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../extension/table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../extension/table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../extension/table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../extension/table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../extension/table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -193,56 +221,46 @@
 <h2 id="gowny-wyjatek">Główny wyjątek</h2>
 <p>Nadrzędny wyjątek, "rodzic" wszystkich wyjątków zwracanych przez framework.</p>
 <p>Namespace:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Exception\NimbleException</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\framework\Exception\NimbleException
+</code></pre>
 <p>Konstruktor:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">public function __construct(string $message = &quot;System error&quot;, int $code = 500, ?Throwable $previous = null)</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function __construct(string $message = &quot;System error&quot;, int $code = 500, ?Throwable $previous = null)
+</code></pre>
 <h2 id="wyjatek-nie-znaleziono">Wyjątek "nie znaleziono"</h2>
 <p>Wyjątek zwracany, jeżeli dana klasa, metoda, plik itd. nie istnieje.</p>
 <p>Namespace:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Exception\NimbleException</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\framework\Exception\NimbleException
+</code></pre>
 <p>Konstruktor:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">public function __construct(string $message = &quot;Not found&quot;, int $code = 404, ?Throwable $previous = null)</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function __construct(string $message = &quot;Not found&quot;, int $code = 404, ?Throwable $previous = null)
+</code></pre>
 <h2 id="ukryty-wyjatek">Ukryty wyjątek</h2>
 <p>Wyjątek zwraca błąd ale ukrywa treść dla klienta</p>
 <p>Namespace:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Exception\HiddenException</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\framework\Exception\HiddenException
+</code></pre>
 <p>Rodzic:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Exception\NimbleException</span>
-</code></pre></div>
-
+<pre><code class="language-php">Nimblephp\framework\Exception\NimbleException
+</code></pre>
 <p>Konstruktor:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">public function __construct(string $message = &quot;System error&quot;, int $code = 500, ?Throwable $previous = null)```</span>
-</code></pre></div>
-
-<p>Metody:</p>
-<h3 id="gethiddenmessage">getHiddenMessage</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function loadModel(string $name): AbstractModel</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function __construct(string $message = &quot;System error&quot;, int $code = 500, ?Throwable $previous = null)```
+</code></pre>
+<h3 id="metody">Metody</h3>
+<h4 id="gethiddenmessage">getHiddenMessage</h4>
+<pre><code class="language-PHP">public function getHiddenMessage(): string
+</code></pre>
 <p>Zwraca ukrytą treść</p>
 <h2 id="wyjatek-bazodanowy">Wyjątek bazodanowy</h2>
 <p>Wyjątek dla błędów bazy danych</p>
 <p>Namespace:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Exception\DatabaseException</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\framework\Exception\DatabaseException
+</code></pre>
 <p>Rodzic:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Exception\HiddenException</span>
-</code></pre></div>
-
+<pre><code class="language-php">Nimblephp\framework\Exception\HiddenException
+</code></pre>
 <p>Konstruktor:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">public function __construct(string $message = &quot;Database error&quot;, int $code = 500, ?Throwable $previous = null)</span>
-</code></pre></div>
+<pre><code class="language-PHP">public function __construct(string $message = &quot;Database error&quot;, int $code = 500, ?Throwable $previous = null)
+</code></pre>
               
             </div>
           </div><footer>

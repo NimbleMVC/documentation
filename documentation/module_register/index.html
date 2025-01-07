@@ -140,6 +140,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Migrations</a>
@@ -176,6 +182,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extension/table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -205,49 +229,42 @@
 <p>Klasa do zarządzania modułami</p>
 <h2 id="namespace">Namespace</h2>
 <p>Klasa:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\ModuleRegister</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\framework\ModuleRegister
+</code></pre>
 <h2 id="zmienne">Zmienne</h2>
 <ul>
 <li><strong>private static array $modules = []</strong>: Lista modułów</li>
 </ul>
 <h2 id="metody-statyczne">Metody statyczne</h2>
 <h3 id="register">register</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public static function register(</span>
-<span class="x">        string $name,</span>
-<span class="x">        array $config = [],</span>
-<span class="x">        ?string $namespace = null,</span>
-<span class="x">        ?array $classes = null</span>
-<span class="x">    ): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public static function register(
+        string $name,
+        array $config = [],
+        ?string $namespace = null,
+        ?array $classes = null
+    ): void
+</code></pre>
 <p>Rejestracja nowego modułu</p>
 <h3 id="get">get</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public static function get(string $name): array</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public static function get(string $name): array
+</code></pre>
 <p>Pobranie wpisu z rejestru</p>
 <h3 id="isset">isset</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public static function isset(string $name): bool</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public static function isset(string $name): bool
+</code></pre>
 <p>Sprawdzenie czy moduł jest załadowany</p>
 <h3 id="getall">getAll</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public static function getAll(): array</span>
-</code></pre></div>
-
+<pre><code class="language-php">public static function getAll(): array
+</code></pre>
 <p>Pobranie wszystkich załadowanych modułów</p>
 <h3 id="moduleexistsinvendor">moduleExistsInVendor</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public static function moduleExistsInVendor(string $name): bool</span>
-</code></pre></div>
-
+<pre><code class="language-php">public static function moduleExistsInVendor(string $name): bool
+</code></pre>
 <p>Sprawdzenie czy moduł istnieje w vendorze composera</p>
 <h2 id="metody">Metody</h2>
 <h3 id="autoregister">autoRegister</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function autoRegister(): void</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function autoRegister(): void
+</code></pre>
 <p>Automatyczne ładowanie modułów z vendor composera</p>
               
             </div>

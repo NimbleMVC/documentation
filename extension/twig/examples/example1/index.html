@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>JS - NimblePHP</title>
+    <title>Integracja strony z twig - NimblePHP</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "JS";
-        var mkdocs_page_input_path = "extension/twig/functions/js.md";
+        var mkdocs_page_name = "Integracja strony z twig";
+        var mkdocs_page_input_path = "extension/twig/examples/example1.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -104,31 +104,21 @@
                 </li>
     </ul>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" >Funkcje</a>
-    <ul class="current">
-                <li class="toctree-l3"><a class="reference internal" href="../action/">Action</a>
-                </li>
-                <li class="toctree-l3 current"><a class="reference internal current" href="#">JS</a>
-    <ul class="current">
-    <li class="toctree-l4"><a class="reference internal" href="#wymagania">Wymagania</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#metoda">Metoda</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#zmienne">Zmienne</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#przykady">Przykłady</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#wazne">Ważne</a>
-    </li>
-    </ul>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../view/">View</a>
-                </li>
-    </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+                <li class="toctree-l2"><a class="reference internal" >Funkcje</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../examples/example1/">Integracja strony z twig</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../functions/action/">Action</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../functions/js/">JS</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../functions/view/">View</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" >Przykłady</a>
+    <ul class="current">
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">Integracja strony z twig</a>
+    <ul class="current">
+    </ul>
                 </li>
     </ul>
                 </li>
@@ -203,8 +193,8 @@
     <li><a href="../../../.." class="icon icon-home" aria-label="Dokumentacja"></a></li>
           <li class="breadcrumb-item">Rozszerzenia</li>
           <li class="breadcrumb-item">Twig</li>
-          <li class="breadcrumb-item">Funkcje</li>
-      <li class="breadcrumb-item active">JS</li>
+          <li class="breadcrumb-item">Przykłady</li>
+      <li class="breadcrumb-item active">Integracja strony z twig</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -213,37 +203,64 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="funkcja-skryptow-js">Funkcja skryptów js</h1>
-<p>Funkcja pozwala na wczytanie pliku js dla widoku</p>
-<p>Widok powinien być utworzony w tym samym folderze co widok i o takiej samej nazwie z rozszerzeniem .js</p>
-<h2 id="wymagania">Wymagania</h2>
-<ul>
-<li><strong>jquery</strong></li>
-</ul>
-<h2 id="metoda">Metoda</h2>
-<pre><code class="language-php">js(array $data = []): string
+                <h1 id="przykad-szablonow">Przykład szablonów</h1>
+<p>Poniższy przykład pokazuje jak w prosty sposób można korzystać z globalnych szablonów dla strony</p>
+<ol>
+<li>Po zainstalowaniu modułu należy utworzyć folder <code>templates</code> w głównym folderze projektu.</li>
+<li>W folderze <code>templates</code> tworzymy plik <code>base.twig</code> z następującą zawartością:</li>
+</ol>
+<pre><code class="language-twig">&lt;html lang=&quot;pl&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+        &lt;title&gt;Tytuł strony&lt;/title&gt;
+        {{ debugbarHeader }}
+    &lt;/head&gt;
+    &lt;body&gt;
+        {{ content }}
+    &lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
-<h2 id="zmienne">Zmienne</h2>
-<ul>
-<li><strong>$data</strong>: Parametry przesłane do skryptu</li>
-</ul>
-<h2 id="przykady">Przykłady</h2>
-<pre><code class="language-html">&lt;div id='test'&gt;...&lt;/div&gt;
-{\{ js({'isActive': true}) }}
+<p>3.. Przechodziny do pliku <code>public/index.php</code> i modyfikujemy go w taki sposób aby korzystał z szablonów:</p>
+<pre><code class="language-php">&lt;?php
+
+require('../vendor/autoload.php');
+
+try {
+    \Nimblephp\twig\Twig::$globalPaths[] = '../templates';
+    $route = new \Nimblephp\framework\Route(new \Nimblephp\framework\Request());
+    $kernel = new \Nimblephp\framework\Kernel($route);
+
+    ob_start();
+    $kernel-&gt;handle();
+    (new \Nimblephp\twig\Template('base'))-&gt;render([
+        'content' =&gt; ob_get_clean(),
+        'debugbarHeader' =&gt; Debugbar::renderHeader()
+    ]);
+} catch (Throwable $e) {
+    $twig = new \Nimblephp\twig\Twig();
+    echo $twig-&gt;renderSimpleException($throwable);
+}
+
+if ($_ENV['DEBUG'] &amp;&amp; !(new \Nimblephp\framework\Request())-&gt;isAjax()) {
+    echo \Nimblephp\debugbar\Debugbar::render();
+}
 </code></pre>
-<p>index.js</p>
-<pre><code class="language-js">(function ($self, data) {
-    $('#id').text('success');
-})
-</code></pre>
-<h2 id="wazne">Ważne</h2>
-<p>Funkcja <code>js</code> powinna być wykonywana w głównym elemencie gdyż zmienna <code>$self</code> zawiera parenta wykonywanego skryptu</p>
+<p>W powyższym skrypcie:</p>
+<ol>
+<li>Definiujemy folder z szablonami</li>
+<li>Pobieramy routingu</li>
+<li>Renderujemy szablon o nazwie <code>base</code> oraz przesyłamy do niego zmienną <code>content</code> z zawartością strony</li>
+<li>W zmiennej <code>debugbarHeader</code> przesyłamy nagłówek debugbara</li>
+<li>W przypadku błędu wyświetlamy prosty komunikat błędu wygenerowany z gotowego szablonu na bazie bootstrap5</li>
+<li>Wyświetlamy PHPDebugBar</li>
+</ol>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Nawigacja w stopce">
-        <a href="../action/" class="btn btn-neutral float-left" title="Action"><span class="icon icon-circle-arrow-left"></span> Wstecz</a>
-        <a href="../view/" class="btn btn-neutral float-right" title="View">Dalej <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../functions/view/" class="btn btn-neutral float-left" title="View"><span class="icon icon-circle-arrow-left"></span> Wstecz</a>
+        <a href="../../../migrations/start/" class="btn btn-neutral float-right" title="Instalacja">Dalej <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -266,10 +283,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../action/" style="color: #fcfcfc">&laquo; Wstecz</a></span>
+      <span><a href="../../functions/view/" style="color: #fcfcfc">&laquo; Wstecz</a></span>
     
     
-      <span><a href="../view/" style="color: #fcfcfc">Dalej &raquo;</a></span>
+      <span><a href="../../../migrations/start/" style="color: #fcfcfc">Dalej &raquo;</a></span>
     
   </span>
 </div>

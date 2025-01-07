@@ -114,6 +114,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" >Migrations</a>
@@ -158,6 +164,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -189,23 +213,30 @@
 <p>Klasa dziedziczona przez skrypty migracyjne</p>
 <h2 id="namespace">Namespace</h2>
 <p>Klasa:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\migrations\AbstractMigration</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\migrations\AbstractMigration
+</code></pre>
 <p>Interfejs:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\migrations\Interfaces\MigrationInterface</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\migrations\Interfaces\MigrationInterface
+</code></pre>
 <h2 id="zmienne">Zmienne</h2>
 <ul>
-<li><strong>public ControllerInterface $controller</strong>: Klasa kontrolera</li>
+<li><strong>public <a href="/documentation/controller">ControllerInterface</a> $controller</strong>: Intrancja kontrolera</li>
 </ul>
 <h2 id="metody">Metody</h2>
-<h3 id="setsamesite">setSameSite</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function loadModel(string $name): AbstractModel</span>
-</code></pre></div>
+<h3 id="loadmodel">loadModel</h3>
+<pre><code class="language-PHP">public function loadModel(string $name): AbstractModel
+</code></pre>
+<div style="border: 1px solid #AAA; padding: 8px; margin-bottom: 8px;">
+<b>Argumenty</b><br />
+<b>string $name</b>: Nazwa modelu
+</div>
 
-<p>Załadowanie modelu</p>
+<p>Metoda loadModel służy do ładowania modelu na podstawie podanej nazwy.</p>
+<p>Po załadowaniu modelu znajduje się on w tablicy <code>$models</code> oraz jest możliwość do odwołanai się do niego za pomocą zmiennej z CamelCase np.:</p>
+<pre><code class="language-php">$this-&gt;loadModel('testowy_model');
+// odwołanie do modelu
+$this-&gt;TestowyModel-&gt;...
+</code></pre>
               
             </div>
           </div><footer>

@@ -130,6 +130,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Migrations</a>
@@ -161,6 +167,24 @@
                 <li class="toctree-l3"><a class="reference internal" href="../../extension/form/form_builder/">FormBuilder</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../extension/form/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extension/table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/filter/">Filter</a>
                 </li>
     </ul>
                 </li>
@@ -202,13 +226,11 @@
 </ul>
 <h2 id="namespace">Namespace</h2>
 <p>Klasa:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\View</span>
-</code></pre></div>
-
-<p>Interface:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Interfaces\ViewInterface</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\framework\View
+</code></pre>
+<p>Interfejs:</p>
+<pre><code class="language-PHP">Nimblephp\framework\Interfaces\ViewInterface
+</code></pre>
 <h2 id="zmienne">Zmienne</h2>
 <ul>
 <li><strong>protected string $viewPath = '/src/View/'</strong>: Ścieżka do folderu z widokami.</li>
@@ -216,14 +238,12 @@
 </ul>
 <h2 id="metody">Metody</h2>
 <h3 id="setresponsecode">setResponseCode</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function setResponseCode(int $responseCode): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function setResponseCode(int $responseCode): void
+</code></pre>
 <p>Definiowanie kodu odpowiedzi.</p>
 <h3 id="render">render</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function render(string $viewName, array $data = []): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function render(string $viewName, array $data = []): void
+</code></pre>
 <p>Renderowanie widoku na podstawie nazwy widoku i dostarczonych danych.</p>
               
             </div>

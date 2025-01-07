@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Ajax - NimblePHP</title>
+    <title>Cell - NimblePHP</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Ajax";
-        var mkdocs_page_input_path = "extension/form/ajax.md";
+        var mkdocs_page_name = "Cell";
+        var mkdocs_page_input_path = "extension/table/cell.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -138,45 +138,43 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" >Form</a>
-    <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../start/">Instalacja</a>
+                  <li class="toctree-l1"><a class="reference internal" >Form</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../form/start/">Instalacja</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../validations/">Walidacje</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../form/validations/">Walidacje</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" >Dokumentacja</a>
-    <ul class="current">
-                <li class="toctree-l3"><a class="reference internal" href="../form/">Form</a>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../form/form/">Form</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../form_builder/">FormBuilder</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../form/form_builder/">FormBuilder</a>
                 </li>
-                <li class="toctree-l3 current"><a class="reference internal current" href="#">Ajax</a>
-    <ul class="current">
-    <li class="toctree-l4"><a class="reference internal" href="#wymagania">Wymagania</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#zaadowanie-pliku-js">Załądowanie pliku js</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#triggery">Triggery</a>
-    </li>
-    </ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../form/ajax/">Ajax</a>
                 </li>
     </ul>
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" >Table</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../table/start/">Instalacja</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Table</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../start/">Instalacja</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
-    <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../table/table/">Table</a>
+                <li class="toctree-l2 current"><a class="reference internal current" >Dokumentacja</a>
+    <ul class="current">
+                <li class="toctree-l3"><a class="reference internal" href="../table/">Table</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../table/cell/">Cell</a>
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">Cell</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#namespace">Namespace</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#zmienne">Zmienne</a>
+    </li>
+    </ul>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../table/column/">Column</a>
+                <li class="toctree-l3"><a class="reference internal" href="../column/">Column</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../table/filter/">Filter</a>
+                <li class="toctree-l3"><a class="reference internal" href="../filter/">Filter</a>
                 </li>
     </ul>
                 </li>
@@ -198,9 +196,9 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" aria-label="Dokumentacja"></a></li>
           <li class="breadcrumb-item">Rozszerzenia</li>
-          <li class="breadcrumb-item">Form</li>
+          <li class="breadcrumb-item">Table</li>
           <li class="breadcrumb-item">Dokumentacja</li>
-      <li class="breadcrumb-item active">Ajax</li>
+      <li class="breadcrumb-item active">Cell</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -209,37 +207,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="dynamiczny-formularz">Dynamiczny formularz</h1>
-<p>Każdy formularz pozwala na dynamiczne przeładowanie</p>
-<h2 id="wymagania">Wymagania</h2>
+                <h1 id="komorka">Komórka</h1>
+<p>Klasa przesylająca dane do funkcji kolumny</p>
+<h2 id="namespace">Namespace</h2>
+<pre><code class="language-php">Nimblephp\table\Cell
+</code></pre>
+<h2 id="zmienne">Zmienne</h2>
 <ul>
-<li>jquery</li>
+<li><strong>public mixed $value</strong>: Wartość wiersza</li>
+<li><strong>public array $data = []</strong>: Pozostałe dane wiersza</li>
 </ul>
-<h2 id="zaadowanie-pliku-js">Załądowanie pliku js</h2>
-<p>Należy zaimportować do widoku automatycznie tworzony plik <code>ajax.js</code> znajdujący się pod świeżką: <code>/assets/form.js</code></p>
-<h2 id="triggery">Triggery</h2>
-<h3 id="klikniecie-w-submit">Kliknięcie w submit</h3>
-<pre><code>ajaxform.submit
-</code></pre>
-<h3 id="przykad">Przykład</h3>
-<pre><code class="language-js">$('#myForm').on('ajaxform.success', function(event, response, form, preventDefault) {
-    ...
-    preventDefault(); // Zatrzymuje domyślne zachowanie, np. przekierowanie
-});
-</code></pre>
-<h3 id="sukcess">Sukcess</h3>
-<p>Wywoływany również gdy wystąpi walidacja</p>
-<pre><code>ajaxform.success
-</code></pre>
-<h3 id="bad">Błąd</h3>
-<pre><code>ajaxform.error
-</code></pre>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Nawigacja w stopce">
-        <a href="../form_builder/" class="btn btn-neutral float-left" title="FormBuilder"><span class="icon icon-circle-arrow-left"></span> Wstecz</a>
-        <a href="../../table/start/" class="btn btn-neutral float-right" title="Instalacja">Dalej <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../table/" class="btn btn-neutral float-left" title="Table"><span class="icon icon-circle-arrow-left"></span> Wstecz</a>
+        <a href="../column/" class="btn btn-neutral float-right" title="Column">Dalej <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -262,10 +245,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../form_builder/" style="color: #fcfcfc">&laquo; Wstecz</a></span>
+      <span><a href="../table/" style="color: #fcfcfc">&laquo; Wstecz</a></span>
     
     
-      <span><a href="../../table/start/" style="color: #fcfcfc">Dalej &raquo;</a></span>
+      <span><a href="../column/" style="color: #fcfcfc">Dalej &raquo;</a></span>
     
   </span>
 </div>

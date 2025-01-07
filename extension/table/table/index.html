@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pl" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Table - NimblePHP</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Table";
+        var mkdocs_page_input_path = "extension/table/table.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> NimblePHP
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Przeszukaj dokumentację" aria-label="Przeszukaj dokumentację" title="Wpisz tutaj frazę do wyszukania" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu nawigacji">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">NimblePHP</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../required/">Wymagania</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../how-start/">Jak zacząć</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../default-config/">Domyślna konfiguracja</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../exceptions/">Wyjątki</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dokumentacja</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../documentation/controller/">Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../documentation/model/">Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../documentation/view/">View</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../documentation/request/">Request</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../documentation/response/">Response</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../documentation/route/">Route</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../documentation/kernel/">Kernel</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../documentation/cookie/">Cookie</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../documentation/session/">Session</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../documentation/log/">Log</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../documentation/middleware/">Middleware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../documentation/module_register/">ModuleRegister</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../documentation/storage/">Storage</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Rozszerzenia</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Twig</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../twig/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../twig/view/">View</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../twig/twig/">Twig</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../twig/template/">Template</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Funkcje</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../twig/functions/action/">Action</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../twig/functions/js/">JS</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../twig/functions/view/">View</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Migrations</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../migrations/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../migrations/migrations/">Migrations</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../migrations/status/">Status</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../migrations/abstract_migration/">AbstractMigration</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Form</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../form/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../form/validations/">Walidacje</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../form/form/">Form</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../form/form_builder/">FormBuilder</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../form/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Table</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" >Dokumentacja</a>
+    <ul class="current">
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">Table</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#namespace">Namespace</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#zmienne">Zmienne</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#metody">Metody</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobilne menu nawigacji">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">NimblePHP</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Dokumentacja"></a></li>
+          <li class="breadcrumb-item">Rozszerzenia</li>
+          <li class="breadcrumb-item">Table</li>
+          <li class="breadcrumb-item">Dokumentacja</li>
+      <li class="breadcrumb-item active">Table</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="table">Table</h1>
+<p>Generowanie tabeli</p>
+<h2 id="namespace">Namespace</h2>
+<pre><code class="language-php">Nimblephp\table\Table
+</code></pre>
+<p>Interface:</p>
+<pre><code class="language-PHP">Nimblephp\table\Interfaces\TableInterface
+</code></pre>
+<h2 id="zmienne">Zmienne</h2>
+<ul>
+<li><strong>public static array $LANGUAGE = [...]</strong>: Tablica z językami</li>
+<li><strong>protected $viewClass = null</strong>: Klasa widoku</li>
+<li><strong>protected array $columns = []</strong>: Kolumny</li>
+<li><strong>protected ?array $data = null</strong>: Dane tabeli</li>
+<li><strong>protected ?string $id = null</strong>: ID tabeli</li>
+<li><strong>protected ?<a href="/documentation/model/">ModelInterface</a> $model</strong>: Instancja klasy modelu</li>
+<li><strong>protected array $conditions = []</strong>: Warunki zapytania</li>
+<li><strong>protected bool $ajax = false</strong>: Czy tabela ma być ajaxowa</li>
+<li><strong>protected int $limit = 15</strong>: Limit wpisów na stronę</li>
+<li><strong>protected int $page = 1</strong>: Aktualna strona w paginacji</li>
+<li><strong>protected int $pageCount = 1</strong>: Liczba stron paginacji</li>
+<li><strong>protected int $dataCount = 0</strong>: Ilość danych</li>
+<li><strong>protected ?string $groupBy = null</strong>: Warunek dla grupowania</li>
+<li><strong>protected <a href="/documentation/request/">Requedt</a> $request</strong>: Instancja klasy Request</li>
+<li><strong>protected <a href="/documentation/cookie/">Cookie</a> $cookie</strong>: Instancja klasy Cookie</li>
+<li><strong>protected ?string $configName = null</strong>: Nazwa konfiguracji</li>
+<li><strong>protected array $config = []</strong>: Konfiguracja tabeli</li>
+<li><strong>protected string $search = ''</strong>: Warunek wyszukiwania</li>
+<li><strong>protected array $actions = []</strong>: Dodatkowe akcje tabeli</li>
+<li><strong>protected ?string $orderBy = null</strong>: Sortowanie tabeli</li>
+<li><strong>protected string $class = ''</strong>: Dodatkowe klasy dla tabeli</li>
+<li><strong>protected bool $isAjax = false</strong>: Czy tabela jest ajaxowa</li>
+<li><strong>protected static null|int|string $ajaxKey = null</strong>: Nazwa klucza z tabeli z konfiguracją</li>
+<li><strong>protected \krzysztofzylka\DatabaseManager\Table $configTable</strong>: Instancja tabeli z konfiguracjami z bazy danych</li>
+<li><strong>protected array $filters = []</strong>: Filtry tabeli</li>
+</ul>
+<h2 id="metody">Metody</h2>
+<h3 id="_construct">_construct</h3>
+<pre><code class="language-php">public function __construct(?string $id = null)
+</code></pre>
+<p>Tworzenie instancji tabeli</p>
+<h3 id="saveconfig">saveConfig</h3>
+<pre><code class="language-php">public function saveConfig(): void
+</code></pre>
+<p>Zapisanie konfiguracji do ciasteczka</p>
+<h3 id="readconfig">readConfig</h3>
+<pre><code class="language-php">public function readConfig(): void
+</code></pre>
+<p>Odczytanie konfiguracji z ciasteczka</p>
+<h3 id="queryconfig">queryConfig</h3>
+<pre><code class="language-php">public function queryConfig(): void
+</code></pre>
+<p>Odczytanie konfiguracji z query</p>
+<h3 id="addcolumn">addColumn</h3>
+<pre><code class="language-php">public function addColumn(ColumnInterface $column): void
+</code></pre>
+<p>Dodanie kolumny do tabeli</p>
+<h3 id="getcolumns">getColumns</h3>
+<pre><code class="language-php">public function getColumns(): array
+</code></pre>
+<p>Pobranie listy kolumn</p>
+<h3 id="setdata">setData</h3>
+<pre><code class="language-php">public function setData(array $data): void
+</code></pre>
+<p>Dodanie danych do tabeli</p>
+<h3 id="getdata">getData</h3>
+<pre><code class="language-php">public function getData(): array
+</code></pre>
+<p>Pobranie danych dla tabeli, jeżeli dane nie są zdefiniowane a model jest, dane zostaną pobrane automatycznie</p>
+<h3 id="render">render</h3>
+<pre><code class="language-php">public function render(): string
+</code></pre>
+<p>Wygenerowanie tabeli</p>
+<h3 id="saveajaxconfig">saveAjaxConfig</h3>
+<pre><code class="language-php">public function saveAjaxConfig(): void
+</code></pre>
+<p>Zapis konfiguracji z ajax</p>
+<h3 id="getajaxconfig">getAjaxConfig</h3>
+<pre><code class="language-php">public function getAjaxConfig(): void
+</code></pre>
+<p>Pobranie konfiguracji z ajax</p>
+<h3 id="preparecolumnvalue">prepareColumnValue</h3>
+<pre><code class="language-php">public function prepareColumnValue(ColumnInterface $column, array $data): string
+</code></pre>
+<p>Pobranie wartości z wybranego wiersza</p>
+<h3 id="getid">getId</h3>
+<pre><code class="language-php">public function getId(): ?string
+</code></pre>
+<p>Pobranie id tabeli</p>
+<h3 id="setid">setId</h3>
+<pre><code class="language-php">public function setId(?string $id): void
+</code></pre>
+<p>Zdefiniowanie id tabeli</p>
+<h3 id="getmodel">getModel</h3>
+<pre><code class="language-php">public function getModel(): ?ModelInterface
+</code></pre>
+<p>Pobranie instancji modelu</p>
+<h3 id="setmodel">setModel</h3>
+<pre><code class="language-php">public function setModel(?ModelInterface $model): void
+</code></pre>
+<p>Zdefiniowanie instancji modelu</p>
+<h3 id="getconditions">getConditions</h3>
+<pre><code class="language-php">public function getConditions(): array
+</code></pre>
+<p>Pobranie warunków wyszukiwania w modelu</p>
+<h3 id="setconditions">setConditions</h3>
+<pre><code class="language-php">public function setConditions(array $conditions): void
+</code></pre>
+<p>Zdefiniowanie warunków wyszukiwania</p>
+<h3 id="getlimit">getLimit</h3>
+<pre><code class="language-php">public function getLimit(): int
+</code></pre>
+<p>Pobranie limitu</p>
+<h3 id="setlimit">setLimit</h3>
+<pre><code class="language-php">public function setLimit(int $limit): void
+</code></pre>
+<p>Zdefniowanie limitu</p>
+<h3 id="getpage">getPage</h3>
+<pre><code class="language-php">public function getPage(): int
+</code></pre>
+<p>Pobranie aktualnej strony</p>
+<h3 id="setpage">setPage</h3>
+<pre><code class="language-php">public function setPage(int $page): void
+</code></pre>
+<p>Zdefiniowanie aktualnej strony</p>
+<h3 id="getpagecount">getPageCount</h3>
+<pre><code class="language-php">public function getPageCount(): int
+</code></pre>
+<p>Pobranie listy stron</p>
+<h3 id="setpagecount">setPageCount</h3>
+<pre><code class="language-php">public function setPageCount(int $pageCount): void
+</code></pre>
+<p>Zdefiniowanie liczby stron</p>
+<h3 id="getgroupby">getGroupBy</h3>
+<pre><code class="language-php">public function getGroupBy(): ?string
+</code></pre>
+<p>Pobranie grupowania</p>
+<h3 id="setgroupby">setGroupBy</h3>
+<pre><code class="language-php">public function setGroupBy(?string $groupBy): void
+</code></pre>
+<p>Zdefiniowanie grupowania</p>
+<h3 id="getsearch">getSearch</h3>
+<pre><code class="language-php">public function getSearch(): string
+</code></pre>
+<p>Pobranie wyszukiwania</p>
+<h3 id="setsearch">setSearch</h3>
+<pre><code class="language-php">public function setSearch(string $search): self
+</code></pre>
+<p>Pobranie wyszukiwania</p>
+<h3 id="getorderby">getOrderBy</h3>
+<pre><code class="language-php">public function getOrderBy(): ?string
+</code></pre>
+<p>Pobranie grupowania</p>
+<h3 id="setorderby">setOrderBy</h3>
+<pre><code class="language-php">public function setOrderBy(string $orderBy): self
+</code></pre>
+<p>Zdefiniowanie grupowania</p>
+<h3 id="addaction">addAction</h3>
+<pre><code class="language-php">public function addAction(string $name, string $url, string $class=''): self
+</code></pre>
+<p>Dodanie akcji</p>
+<h3 id="getactions">getActions</h3>
+<pre><code class="language-php">public function getActions(): array
+</code></pre>
+<p>Pobranie listy akcji</p>
+<h3 id="getclass">getClass</h3>
+<pre><code class="language-php">public function setClass(string $class = ''): void
+</code></pre>
+<p>Zdefiniowanie dodatkowych klas tabeli</p>
+<h3 id="getclass_1">getClass</h3>
+<pre><code class="language-php">public function getClass(): string
+</code></pre>
+<p>Pobranie dodatkowych klas</p>
+<h3 id="isajax">isAjax</h3>
+<pre><code class="language-php">public function isAjax(): bool
+</code></pre>
+<p>Czy tabela jest ajaxowa</p>
+<h3 id="setajax">setAjax</h3>
+<pre><code class="language-php">public function setAjax(bool $ajax = true): self
+</code></pre>
+<p>Zdefinowanie czy tabela jest dynamiczna</p>
+<h3 id="setajaxkey">setAjaxKey</h3>
+<pre><code class="language-php">public static function setAjaxKey(null|int|string $ajaxKey): void
+</code></pre>
+<p>Zdefiniowanie własnej nazwy klucza dla konfiguracji w bazie danych</p>
+<h3 id="getajaxkey">getAjaxKey</h3>
+<pre><code class="language-php">public function getAjaxKey(): null|int|string
+</code></pre>
+<p>Pobranie klucza dla konfiguracji w bazie danych</p>
+<h3 id="addfilter">addFilter</h3>
+<pre><code class="language-php">public function addFilter(FilterInterface $filter): self
+</code></pre>
+<p>Dodanie filtra tabeli</p>
+<h3 id="getfilters">getFilters</h3>
+<pre><code class="language-php">public function getFilters(): array
+</code></pre>
+<p>Pobranie listy filtrów</p>
+<h3 id="preparedatacount">prepareDataCount</h3>
+<pre><code class="language-php">protected function prepareDataCount(): void
+</code></pre>
+<p>Zliczenie ilości danych dla tabeli</p>
+<h3 id="getdatafromarray">getDataFromArray</h3>
+<pre><code class="language-php">protected function getDataFromArray(array $data, string $key): ?string
+</code></pre>
+<p>Pobranie danych po kluczu z tabeli</p>
+<h3 id="adddebug">addDebug</h3>
+<pre><code class="language-php">protected function addDebug(): void
+</code></pre>
+<p>Dodanie debugu</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Nawigacja w stopce">
+        <a href="../start/" class="btn btn-neutral float-left" title="Instalacja"><span class="icon icon-circle-arrow-left"></span> Wstecz</a>
+        <a href="../cell/" class="btn btn-neutral float-right" title="Cell">Dalej <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Zbudowano przy użyciu pakietu <a href="https://www.mkdocs.org/">MkDocs</a> oraz <a href="https://github.com/readthedocs/sphinx_rtd_theme">motywu</a> dostarczonego przez <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Wersje">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../start/" style="color: #fcfcfc">&laquo; Wstecz</a></span>
+    
+    
+      <span><a href="../cell/" style="color: #fcfcfc">Dalej &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -136,6 +136,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Migrations</a>
@@ -172,6 +178,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extension/table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -201,48 +225,39 @@
 <p>Session to klasa odpowiedzialna za zarządzanie sesjami użytkowników. Umożliwia inicjalizację sesji, a także ustawianie, pobieranie, sprawdzanie istnienia, usuwanie oraz niszczenie danych sesji.</p>
 <h2 id="namespace">Namespace</h2>
 <p>Klasa:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Session</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\framework\Session
+</code></pre>
 <p>Interfejs:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Interfaces\SessionInterface</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\framework\Interfaces\SessionInterface
+</code></pre>
 <h2 id="metody">Metody</h2>
 <h3 id="konstruktor">Konstruktor</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function __construct()</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function __construct()
+</code></pre>
 <p>Inicjalizuje sesję, jeśli jeszcze nie została uruchomiona.</p>
 <h3 id="set">set</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function set($key, $value): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function set($key, $value): void
+</code></pre>
 <p>Ustawia wartość w sesji pod określonym kluczem.</p>
 <h3 id="get">get</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function get($key): mixed</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function get($key): mixed
+</code></pre>
 <p>Pobiera wartość z sesji dla podanego klucza, zwraca null jeśli klucz nie istnieje.</p>
 <h3 id="exists">exists</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function exists($key): bool</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function exists($key): bool
+</code></pre>
 <p>Sprawdza, czy w sesji istnieje wartość przypisana do danego klucza.</p>
 <h3 id="remove">remove</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function remove($key): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function remove($key): void
+</code></pre>
 <p>Usuwa element z sesji pod określonym kluczem.</p>
 <h3 id="destroy">destroy</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function destroy(): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function destroy(): void
+</code></pre>
 <p>Niszczy wszystkie dane sesji i kończy sesję.</p>
 <h3 id="regenerate">regenerate</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function regenerate(?bool $removeOldSession = false): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function regenerate(?bool $removeOldSession = false): void
+</code></pre>
 <p>Regeneruje ID sesji, opcjonalnie usuwając stare dane sesji.</p>
               
             </div>

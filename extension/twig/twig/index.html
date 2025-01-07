@@ -124,6 +124,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Migrations</a>
@@ -160,6 +166,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -191,9 +215,8 @@
 <p>Klasa odpowiada za zarządzanie środowiskiem renderowania szablonów Twig.</p>
 <h2 id="namespace">Namespace</h2>
 <p>Klasa:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\twig\Twig</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\twig\Twig
+</code></pre>
 <h2 id="zmienne-statyczne">Zmienne statyczne</h2>
 <ul>
 <li><strong>$globalVariables = []</strong>: Zmienne globalne</li>
@@ -206,46 +229,38 @@
 </ul>
 <h2 id="metody">Metody</h2>
 <h3 id="addpath">addPath</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function addPath($path): void</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function addPath($path): void
+</code></pre>
 <ul>
 <li>Dodaje ścieżkę do loadera systemu plików.</li>
 </ul>
 <h3 id="render">render</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function render(string $twigFilePath, array $variables = []): string</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function render(string $twigFilePath, array $variables = []): string
+</code></pre>
 <p>Renderuje widok Twig z określonymi zmiennymi i zwraca wynikowy ciąg.</p>
 <h3 id="rendersimpleexception">renderSimpleException</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function renderSimpleException(Throwable $throwable): string</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function renderSimpleException(Throwable $throwable): string
+</code></pre>
 <p>Renderuje przyjazny dla użytkownika widok błędu</p>
 <h3 id="addpath_1">addPath</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function addPath($path): void</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function addPath($path): void
+</code></pre>
 <p>Dodanie dodatkowej ścieżki do folderu do <code>twigFileSystemLoader</code></p>
 <h3 id="rendersimpleexception_1">renderSimpleException</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function renderSimpleException(Throwable $throwable, array $variables = []): string</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function renderSimpleException(Throwable $throwable, array $variables = []): string
+</code></pre>
 <p>Wygenerowanie prostego widoku błędu</p>
 <h3 id="addglobal">addGlobal</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function addGlobal(string $name, mixed $value): void</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function addGlobal(string $name, mixed $value): void
+</code></pre>
 <p>Dodanie zmiennej globalnej</p>
 <h3 id="throwabletostring">throwableToString</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">private function throwableToString(Throwable $throwable): string</span>
-</code></pre></div>
-
+<pre><code class="language-php">private function throwableToString(Throwable $throwable): string
+</code></pre>
 <p>Konwersja wyjątków na string</p>
 <h3 id="loadfunctions">loadFunctions</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">private function loadFunctions(string $directory): void</span>
-</code></pre></div>
-
+<pre><code class="language-php">private function loadFunctions(string $directory): void
+</code></pre>
 <p>Ładowanie dodatkowych funkcji dla <code>Twig</code></p>
               
             </div>

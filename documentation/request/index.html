@@ -77,8 +77,6 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#__construct">__construct</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#getallheaders">getAllHeaders</a>
-    </li>
     <li class="toctree-l3"><a class="reference internal" href="#getallquery">getAllQuery</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#getquery">getQuery</a>
@@ -110,6 +108,8 @@
     <li class="toctree-l3"><a class="reference internal" href="#getbody_1">getBody</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#isajax">isAjax</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getallheaders">getAllHeaders</a>
     </li>
         </ul>
     </li>
@@ -160,6 +160,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Migrations</a>
@@ -196,6 +202,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extension/table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -225,13 +249,11 @@
 <p>Klasa służy do obsługi żądań HTTP.</p>
 <h2 id="namespace">Namespace</h2>
 <p>Klasa:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Request</span>
-</code></pre></div>
-
-<p>Interface:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Interfaces\RequestInterface</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\framework\Request
+</code></pre>
+<p>Interfejs:</p>
+<pre><code class="language-PHP">Nimblephp\framework\Interfaces\RequestInterface
+</code></pre>
 <h2 id="zmienne">Zmienne</h2>
 <ul>
 <li><strong>private array $query</strong>: Dane przesłane metodą GET.</li>
@@ -243,100 +265,92 @@
 </ul>
 <h2 id="metody">Metody</h2>
 <h3 id="__construct">__construct</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">__construct()</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">__construct()
+</code></pre>
 <p>Konstruktor klasy, inicjalizuje zmienne przechowujące dane żądania.</p>
-<h3 id="getallheaders">getAllHeaders</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">private function getAllHeaders(): array</span>
-</code></pre></div>
-
-<p>Pobiera wszystkie nagłówki HTTP żądania.</p>
 <h3 id="getallquery">getAllQuery</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function getQuery($key, $default = null, bool $protect = true): mixed</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function getQuery($key, $default = null, bool $protect = true): mixed
+</code></pre>
 <p>Pobranie wszystkich wartości przekazanej metodą GET.</p>
-<p><code>$protect</code> - zabezpieczenie danych za pomocą htmlspecialchars</p>
+<ul>
+<li><strong>bool $protect = true</strong>: zabezpieczenie danych za pomocą htmlspecialchars</li>
+</ul>
 <h3 id="getquery">getQuery</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function getQuery($key, $default = null, bool $protect = true): mixed</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function getQuery($key, $default = null, bool $protect = true): mixed
+</code></pre>
 <p>Pobranie wartości przekazanej metodą GET.</p>
-<p><code>$protect</code> - zabezpieczenie danych za pomocą htmlspecialchars</p>
+<ul>
+<li><strong>bool $protect = true</strong>: zabezpieczenie danych za pomocą htmlspecialchars</li>
+</ul>
 <h3 id="issetquery">issetQuery</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function issetQuery($key): bool</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function issetQuery($key): bool
+</code></pre>
 <p>Sprawdzenie czy zmienna przekazana metodą GET istnieje.</p>
 <h3 id="getallpost">getAllPost</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function getAllPost(bool $protect = true): mixed</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function getAllPost(bool $protect = true): mixed
+</code></pre>
 <p>Pobranie wartości przekazanej metodą POST.</p>
-<p><code>$protect</code> - zabezpieczenie danych za pomocą htmlspecialchars</p>
+<ul>
+<li><strong>bool $protect = true</strong>: zabezpieczenie danych za pomocą htmlspecialchars</li>
+</ul>
 <h3 id="getpost">getPost</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function getPost($key, $default = null, bool $protect = true): mixed</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function getPost($key, $default = null, bool $protect = true): mixed
+</code></pre>
 <p>Pobranie wartości przekazanej metodą POST.</p>
-<p><code>$protect</code> - zabezpieczenie danych za pomocą htmlspecialchars</p>
+<ul>
+<li><strong>bool $protect = true</strong>: zabezpieczenie danych za pomocą htmlspecialchars</li>
+</ul>
 <h3 id="issetpost">issetPost</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function issetPost($key): bool</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function issetPost($key): bool
+</code></pre>
 <p>Sprawdzenie czy zmienna przekazana metodą POST istnieje.</p>
 <h3 id="getcookie">getCookie</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function getCookie($key, $default = null, bool $protect = true)): mixed</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function getCookie($key, $default = null, bool $protect = true)): mixed
+</code></pre>
 <p>Pobranie wartości ciasteczka.</p>
-<p><code>$protect</code> - zabezpieczenie danych za pomocą htmlspecialchars</p>
+<ul>
+<li><strong>bool $protect = true</strong>: zabezpieczenie danych za pomocą htmlspecialchars</li>
+</ul>
 <h3 id="issetcookie">issetCookie</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function issetCookie($key): bool</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function issetCookie($key): bool
+</code></pre>
 <p>Sprawdzenie czy zmienna przekazana metodą COOKIE istnieje.</p>
 <h3 id="getfile">getFile</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function getFile($key): mixed</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function getFile($key): mixed
+</code></pre>
 <p>Pobranie przesłanego pliku.</p>
 <h3 id="getheader">getHeader</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function getHeader($key): mixed</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function getHeader($key): mixed
+</code></pre>
 <p>Pobranie wartości nagłówka.</p>
 <h3 id="getbody">getBody</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function getBody(): string</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function getBody(): string
+</code></pre>
 <p>Zwraca przesłaną treść.</p>
 <h3 id="getmethod">getMethod</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function getMethod(): string</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function getMethod(): string
+</code></pre>
 <p>Pobranie metody HTTP żądania.</p>
 <h3 id="geturi">getUri</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function getUri(): string</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function getUri(): string
+</code></pre>
 <p>Pobranie URI żądania.</p>
 <h3 id="getserver">getServer</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function getServer($key, $default = null): mixed</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function getServer($key, $default = null): mixed
+</code></pre>
 <p>Pobranie informacji o serwerze lub środowisku.</p>
 <h3 id="getbody_1">getBody</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function getBody(): string</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function getBody(): string
+</code></pre>
 <p>Zwraca otrzymane body</p>
 <h3 id="isajax">isAjax</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function isAjax(): string</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function isAjax(): string
+</code></pre>
 <p>Czy zapytanie jest ajaxowe</p>
+<h3 id="getallheaders">getAllHeaders</h3>
+<pre><code class="language-PHP">private function getAllHeaders(): array
+</code></pre>
+<p>Pobiera wszystkie nagłówki HTTP żądania.</p>
               
             </div>
           </div><footer>

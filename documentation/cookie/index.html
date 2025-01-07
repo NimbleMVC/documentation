@@ -138,6 +138,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Migrations</a>
@@ -174,6 +180,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extension/table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -203,13 +227,11 @@
 <p>Cookie to komponent odpowiedzialny za zarządzanie ciasteczkami w aplikacji. Zapewnia metody do ustawiania, pobierania, sprawdzania istnienia i usuwania ciasteczek, z możliwością konfiguracji ich bezpieczeństwa i innych opcji.</p>
 <h2 id="namespace">Namespace</h2>
 <p>Klasa:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Cookie</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\framework\Cookie
+</code></pre>
 <p>Interfejs:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Interfaces\CookieInterface</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\framework\Interfaces\CookieInterface
+</code></pre>
 <h2 id="zmienne">Zmienne</h2>
 <ul>
 <li><strong>protected static bool $defaultSecure</strong>: Domyślne ustawienie bezpiecznego przesyłania ciasteczek (true albo false).</li>
@@ -218,39 +240,32 @@
 </ul>
 <h2 id="metody">Metody</h2>
 <h3 id="setsamesite">setSameSite</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public static function setSameSite(string $sameSite): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public static function setSameSite(string $sameSite): void
+</code></pre>
 <p>Ustawia politykę SameSite dla ciasteczek.</p>
 <h3 id="setdefaultsecure">setDefaultSecure</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public static function setDefaultSecure(bool $defaultSecure): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public static function setDefaultSecure(bool $defaultSecure): void
+</code></pre>
 <p>Ustawia domyślne bezpieczeństwo przesyłania ciasteczek.</p>
 <h3 id="setdefaulthttponly">setDefaultHttpOnly</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public static function setDefaultHttpOnly(bool $defaultHttpOnly): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public static function setDefaultHttpOnly(bool $defaultHttpOnly): void
+</code></pre>
 <p>Ustawia domyślne ustawienie dostępności ciasteczka tylko przez HTTP.</p>
 <h3 id="set">set</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function set(string $name, mixed $value, int $expire = 0, string $path = &#39;/&#39;, string $domain = &#39;&#39;, ?bool $secure = null, ?bool $httponly = false): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function set(string $name, mixed $value, int $expire = 0, string $path = '/', string $domain = '', ?bool $secure = null, ?bool $httponly = false): void
+</code></pre>
 <p>Ustawia ciasteczko z określoną nazwą, wartością, czasem wygaśnięcia, ścieżką, domeną, bezpieczeństwem i dostępnością HTTP.</p>
 <h3 id="get">get</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function get(string $name): mixed</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function get(string $name): mixed
+</code></pre>
 <p>Pobiera wartość ciasteczka o danej nazwie, zwraca null jeśli ciasteczko nie istnieje.</p>
 <h3 id="exists">exists</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function exists(string $name): bool</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function exists(string $name): bool
+</code></pre>
 <p>Sprawdza, czy ciasteczko o podanej nazwie istnieje.</p>
 <h3 id="remove">remove</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function remove(string $name): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function remove(string $name): void
+</code></pre>
 <p>Usuwa ciasteczko o podanej nazwie.</p>
               
             </div>

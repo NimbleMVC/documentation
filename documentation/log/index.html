@@ -126,6 +126,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Migrations</a>
@@ -162,6 +168,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extension/table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -191,18 +215,16 @@
 <p>Klasa służy do logowania zdarzeń w aplikacji.</p>
 <h2 id="namespace">Namespace</h2>
 <p>Klasa:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Log</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\framework\Log
+</code></pre>
 <h2 id="zmienne">Zmienne</h2>
 <ul>
 <li><strong>public static string $session</strong>: Unikatowy identyfikator sesji, generowany dla każdej sesji logowania.</li>
 </ul>
 <h2 id="metody">Metody</h2>
 <h3 id="log_1">log</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public static function log(string $message, string $level = &#39;INFO&#39;, array $content = []): bool</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public static function log(string $message, string $level = 'INFO', array $content = []): bool
+</code></pre>
 <p>Metoda do zapisywania logów. Pozwala na zapisanie wiadomości logu, poziomu logowania oraz dodatkowych treści. Log jest zapisywany tylko jeśli w konfiguracji aplikacji włączone jest logowanie. Generuje unikatowy identyfikator sesji, jeśli nie istnieje. Formatuje i zapisuje dane logu w pliku JSON w katalogu logów projektu. Zwraca <code>true</code>, jeśli zapis się powiódł, lub <code>false</code> w przypadku niepowodzenia.</p>
               
             </div>

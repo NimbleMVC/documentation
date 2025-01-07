@@ -114,6 +114,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Migrations</a>
@@ -160,6 +166,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -190,102 +214,113 @@
                 <h1 id="formbuilder">FormBuilder</h1>
 <p>Tworzenie własnej klasy tworzącej formularz.</p>
 <h2 id="namespace">Namespace</h2>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\form\FormBuilder</span>
-</code></pre></div>
-
+<pre><code class="language-php">Nimblephp\form\FormBuilder
+</code></pre>
 <h2 id="zmienne">Zmienne</h2>
 <ul>
-<li><strong>public Form $form</strong>: Instancja formularza.</li>
+<li><strong>public <a href="/extension/form/form/">Form</a> $form</strong>: Instancja formularza.</li>
 <li><strong>public array $models = []</strong>: Tablica załadowanych modeli.</li>
 <li><strong>protected MethodEnum $method = MethodEnum::POST</strong>: Metoda HTTP formularza, domyślnie POST.</li>
 <li><strong>protected ?string $action = null</strong>: Adres URL docelowy formularza.</li>
-<li><strong>protected ?ControllerInterface $controller = null</strong>: Instancja kontrolera.</li>
-<li><strong>protected Request $request</strong>: Instancja request</li>
+<li><strong>protected ?<a href="/documentation/controller/">ControllerInterface</a> $controller = null</strong>: Instancja kontrolera.</li>
+<li><strong>protected <a href="/documentation/request/">Request</a> $request</strong>: Instancja request</li>
 <li><strong>protected array $data = []</strong>: Dane wejściowe formularza.</li>
 <li><strong>protected array $postData = []</strong>: Dane przesłane przez formularz.</li>
 </ul>
 <h2 id="metody">Metody</h2>
 <h3 id="__construct">__construct</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function __construct(?ControllerInterface $controller = null)</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function __construct(?ControllerInterface $controller = null)
+</code></pre>
 <p>Inicjalizacja klasy z opcjonalnym parametrem $controller.</p>
 <h3 id="generate">generate</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public static function generate(string $name, ?ControllerInterface $controller = null, array $data = []): string</span>
-</code></pre></div>
-
+<pre><code class="language-php">public static function generate(string $name, ?ControllerInterface $controller = null, array $data = []): string
+</code></pre>
 <p>Generowanie formularza</p>
 <h3 id="adderror">addError</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function addError(string $name, string $error): void</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function addError(string $name, string $error): void
+</code></pre>
 <p>Ręczne dodanie błędu walidacji</p>
 <h3 id="log">log</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function log(string $message, string $level = &#39;INFO&#39;, array $content = []): bool</span>
-</code></pre></div>
+<pre><code class="language-php">public function log(string $message, string $level = 'INFO', array $content = []): bool
+</code></pre>
+<div style="border: 1px solid #AAA; padding: 8px; margin-bottom: 8px;">
+<b>Argumenty</b><br />
+<b>string $message</b>: Treść loga<br />
+<b>string $level = 'INFO'</b>: Poziom loga<br />
+<b>array $content = []</b>: Dodatkowe dane loga<br />
+</div>
 
-<p>Logowanie zdarzeń</p>
+<p>Dodanie loga</p>
 <h3 id="loadmodel">loadModel</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function loadModel(string $name): AbstractModel</span>
-</code></pre></div>
+<pre><code class="language-PHP">public function loadModel(string $name): AbstractModel
+</code></pre>
+<div style="border: 1px solid #AAA; padding: 8px; margin-bottom: 8px;">
+<b>Argumenty</b><br />
+<b>string $name</b>: Nazwa modelu
+</div>
 
-<p>Załadowanie modelu</p>
+<p>Metoda loadModel służy do ładowania modelu na podstawie podanej nazwy.</p>
+<p>Po załadowaniu modelu znajduje się on w tablicy <code>$models</code> oraz jest możliwość do odwołanai się do niego za pomocą zmiennej z CamelCase np.:</p>
+<pre><code class="language-php">$this-&gt;loadModel('testowy_model');
+// odwołanie do modelu
+$this-&gt;TestowyModel-&gt;...
+</code></pre>
 <h2 id="przykady">Przykłady</h2>
 <h3 id="formularz">Formularz</h3>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?php</span>
+<pre><code class="language-php">&lt;?php
 
-<span class="k">namespace</span> <span class="nx">src\Form</span><span class="p">;</span>
+namespace src\Form;
 
-<span class="k">class</span> <span class="nc">login</span> <span class="k">extends</span> <span class="nx">\Nimblephp\form\FormBuilder</span>
-<span class="p">{</span>
+class login extends \Nimblephp\form\FormBuilder
+{
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">init</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form</span><span class="o">-&gt;</span><span class="na">setId</span><span class="p">(</span><span class="s1">&#39;login&#39;</span><span class="p">);</span>
-    <span class="p">}</span>
+    public function init(): void
+    {
+        $this-&gt;form-&gt;setId('login');
+    }
 
-    <span class="sd">/**</span>
-<span class="sd">     * create form</span>
-<span class="sd">     * @return void</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">create</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form</span><span class="o">-&gt;</span><span class="na">addInput</span><span class="p">(</span><span class="s1">&#39;account/login&#39;</span><span class="p">,</span> <span class="s1">&#39;Login&#39;</span><span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form</span><span class="o">-&gt;</span><span class="na">addInput</span><span class="p">(</span><span class="s1">&#39;account/password&#39;</span><span class="p">,</span> <span class="s1">&#39;Hasło&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;password&#39;</span><span class="p">]);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form</span><span class="o">-&gt;</span><span class="na">addSubmitButton</span><span class="p">(</span><span class="s1">&#39;Login&#39;</span><span class="p">);</span>
-    <span class="p">}</span>
+    /**
+     * create form
+     * @return void
+     */
+    public function create(): void
+    {
+        $this-&gt;form-&gt;addInput('account/login', 'Login');
+        $this-&gt;form-&gt;addInput('account/password', 'Hasło', ['type' =&gt; 'password']);
+        $this-&gt;form-&gt;addSubmitButton('Login');
+    }
 
-    <span class="sd">/**</span>
-<span class="sd">     * validation form</span>
-<span class="sd">     * @return array</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">validation</span><span class="p">()</span><span class="o">:</span> <span class="k">array</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[</span>
-            <span class="s1">&#39;account/login&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                <span class="s1">&#39;required&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;length&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;min&#39;</span> <span class="o">=&gt;</span> <span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span> <span class="o">=&gt;</span> <span class="mi">128</span><span class="p">]</span>
-            <span class="p">],</span>
-            <span class="s1">&#39;account/password&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                <span class="s1">&#39;required&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;length&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;min&#39;</span> <span class="o">=&gt;</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span> <span class="o">=&gt;</span> <span class="mi">70</span><span class="p">]</span>
-            <span class="p">]</span>
-        <span class="p">];</span>
-    <span class="p">}</span>
+    /**
+     * validation form
+     * @return array
+     */
+    public function validation(): array
+    {
+        return [
+            'account/login' =&gt; [
+                'required',
+                'length' =&gt; ['min' =&gt; 8, 'max' =&gt; 128]
+            ],
+            'account/password' =&gt; [
+                'required',
+                'length' =&gt; ['min' =&gt; 6, 'max' =&gt; 70]
+            ]
+        ];
+    }
 
-    <span class="sd">/**</span>
-<span class="sd">     * submit form</span>
-<span class="sd">     * @return void</span>
-<span class="sd">     * @throws DatabaseException</span>
-<span class="sd">     * @throws NimbleException</span>
-<span class="sd">     * @throws NotFoundException</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">onSubmit</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
-    <span class="p">{</span>
-        <span class="nb">var_dump</span><span class="p">(</span><span class="s1">&#39;Success login submit&#39;</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+    /**
+     * submit form
+     * @return void
+     * @throws DatabaseException
+     * @throws NimbleException
+     * @throws NotFoundException
+     */
+    public function onSubmit(): void
+    {
+        var_dump('Success login submit');
+    }
+}
+</code></pre>
               
             </div>
           </div><footer>

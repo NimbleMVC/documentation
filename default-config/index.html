@@ -120,6 +120,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../extension/twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Migrations</a>
@@ -156,6 +162,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../extension/table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../extension/table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../extension/table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../extension/table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../extension/table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -181,27 +205,26 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="domyslna-konfiguracja">Domyślna konfiguracja</h1>
-<div class="codehilite"><pre><span></span><code>DEBUG=false
-LOG=true
-DEFAULT_CONTROLLER=index
-DEFAULT_METHOD=index
-DATABASE=false
-DATABASE_TYPE=mysql
-DATABASE_PATH=&quot;database.sqlite&quot;
-DATABASE_CHARSET=utf8
-DATABASE_HOST=127.0.0.1
-DATABASE_NAME=
-DATABASE_USERNAME=
-DATABASE_PASSWORD=
-DATABASE_PORT=3306
-</code></pre></div>
-
+<pre><code class="language-text">DEBUG=false                         #Tryb debugowania
+LOG=true                            #Zapis logów
+DEFAULT_CONTROLLER=index            #Domyślny kontroler
+DEFAULT_METHOD=index                #Domyślna metoda
+DATABASE=false                      #Czy korzystamy z bazy danych
+DATABASE_TYPE=mysql                 #Typ bazy danych
+DATABASE_PATH=&quot;database.sqlite&quot;     #Ścieżka do bazy danych
+DATABASE_CHARSET=utf8               #Kodowanie bazy danych
+DATABASE_HOST=127.0.0.1             #Host bazy danych
+DATABASE_NAME=                      #Nazwa bazy danych
+DATABASE_USERNAME=                  #Nazwa użytkownika bazy danych
+DATABASE_PASSWORD=                  #Hasło użytkownika bazy danych
+DATABASE_PORT=3306                  #Port bazy danych
+</code></pre>
 <h2 id="wasna-konfiguracja">Własna konfiguracja</h2>
 <p>Własną konfigurację możeby zapisywać w plikach w głównym folderze projektu, pierwszym plikiem jest <code>.env</code> który powinien powiadać
 konfigurację bez wrażliwych danych, drugim natomiat jest <code>.env.local</code> który powinien być dodany do <code>.gitignore</code> i nie zapisywany w projekcie
 plik ten nadpisuje konfiguracje z wszystkich poprzednich sposobów ładowania</p>
 <h2 id="uzycie">Użycie</h2>
-<p>Konfigurację odczytujemy za pomocą $_ENV</p>
+<p>Konfigurację odczytujemy za pomocą <code>$_ENV</code> np. <code>$_ENV['DEBUG']</code></p>
               
             </div>
           </div><footer>

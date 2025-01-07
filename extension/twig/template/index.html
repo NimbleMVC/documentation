@@ -122,6 +122,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Migrations</a>
@@ -153,6 +159,24 @@
                 <li class="toctree-l3"><a class="reference internal" href="../../form/form_builder/">FormBuilder</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../form/ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/filter/">Filter</a>
                 </li>
     </ul>
                 </li>
@@ -190,26 +214,23 @@
 <p>Ścieżka do szablonów jest zdefiniowana z góry i nie można jej zmienić: <code>&lt;project path&gt;/templates</code></p>
 <h2 id="namespace">Namespace</h2>
 <p>Klasa:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\twig\Template</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\twig\Template
+</code></pre>
 <h2 id="zmienne">Zmienne</h2>
 <ul>
 <li><strong>public string $name</strong>: Nazwa szablonu</li>
-<li><strong>public Twig $twig</strong>: Instancja twig, automatycznie przypisywana podczas tworzenia objektu</li>
+<li><strong>public <a href="/extension/twig/twig/">Twig</a> $twig</strong>: Instancja twig, automatycznie przypisywana podczas tworzenia objektu</li>
 </ul>
 <h2 id="metody">Metody</h2>
 <h3 id="konstruktor">Konstruktor</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function __construct($name)</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function __construct($name)
+</code></pre>
 <ul>
 <li><strong>$name</strong>: Nazwa szablonu</li>
 </ul>
 <h3 id="render">render</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function render(array $variables = []): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function render(array $variables = []): void
+</code></pre>
 <p>Renderowanie szablonu</p>
               
             </div>

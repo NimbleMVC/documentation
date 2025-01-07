@@ -83,8 +83,6 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Middleware</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#uzywanie-klasy">Używanie klasy</a>
-    </li>
     <li class="toctree-l2"><a class="reference internal" href="#namespace">Namespace</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#metody">Metody</a>
@@ -98,6 +96,8 @@
     <li class="toctree-l3"><a class="reference internal" href="#handleexception">handleException</a>
     </li>
         </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#przykady">Przykłady</a>
     </li>
     </ul>
                   </li>
@@ -129,6 +129,12 @@
                 <li class="toctree-l3"><a class="reference internal" href="../../extension/twig/functions/js/">JS</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../../extension/twig/functions/view/">View</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/twig/examples/example1/">Integracja strony z twig</a>
                 </li>
     </ul>
                 </li>
@@ -168,6 +174,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extension/table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -195,69 +219,61 @@
               
                 <h1 id="middleware">Middleware</h1>
 <p>Klasa ładujące skrypty użytkownika do kernel'a</p>
-<h2 id="uzywanie-klasy">Używanie klasy</h2>
-<p>Aby użyć klasy należy w głównym folderze utworzyć plik Middleware.php o następującym szablonie klasy:</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?php</span>
-
-<span class="k">class</span> <span class="nc">Middleware</span> <span class="k">extends</span> <span class="nx">\Nimblephp\framework\Middleware</span>
-<span class="p">{</span>
-
-<span class="p">}</span>
-</code></pre></div>
-
-<p>lub z interfejsu</p>
-<div class="codehilite"><pre><span></span><code><span class="x">class Middleware implements \Nimblephp\framework\Interfaces\MiddlewareInterface</span>
-<span class="x">{</span>
-
-<span class="x">    public function afterBootstrap()</span>
-<span class="x">    {</span>
-<span class="x">    }</span>
-
-<span class="x">    public function beforeController(string $controllerName, string $action, array $params)</span>
-<span class="x">    {</span>
-<span class="x">    }</span>
-
-<span class="x">    public function afterController(string $controllerName, string $action, array $params)</span>
-<span class="x">    {</span>
-<span class="x">    }</span>
-
-<span class="x">    public function handleException(Throwable $exception)</span>
-<span class="x">    {</span>
-<span class="x">    }</span>
-
-<span class="x">}</span>
-</code></pre></div>
-
 <h2 id="namespace">Namespace</h2>
 <p>Klasa:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Middleware</span>
-</code></pre></div>
-
-<p>Interface:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Interfaces\MiddlewareInterface</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\framework\Middleware
+</code></pre>
+<p>Interfejs:</p>
+<pre><code class="language-PHP">Nimblephp\framework\Interfaces\MiddlewareInterface
+</code></pre>
 <h2 id="metody">Metody</h2>
 <h3 id="afterbootstrap">afterBootstrap</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function afterBootstrap()</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function afterBootstrap()
+</code></pre>
 <p>Kod wykonywany po załadowaniu kodu przez bootstrap</p>
 <h3 id="beforecontroller">beforeController</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function beforeController(string $controllerName, string $action, array $params)</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function beforeController(string $controllerName, string $action, array $params)
+</code></pre>
 <p>Kod wykonywany przed załadowaniem kontrolera</p>
 <h3 id="aftercontroller">afterController</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function afterController(string $controllerName, string $action, array $params)</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function afterController(string $controllerName, string $action, array $params)
+</code></pre>
 <p>Kod wykonywany po załadowaniu kontrolera</p>
 <h3 id="handleexception">handleException</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function handleException(Throwable $exception)</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function handleException(Throwable $exception)
+</code></pre>
 <p>Kod wykonuje się na końcu handleException, po zapisaniu logu</p>
+<h2 id="przykady">Przykłady</h2>
+<p>Aby użyć klasy należy w głównym folderze utworzyć plik <code>Middleware.php</code> o następującym szablonie klasy:</p>
+<pre><code class="language-php">&lt;?php
+
+class Middleware extends \Nimblephp\framework\Middleware
+{
+
+}
+</code></pre>
+<p>lub z interfejsu</p>
+<pre><code class="language-php">class Middleware implements \Nimblephp\framework\Interfaces\MiddlewareInterface
+{
+
+    public function afterBootstrap()
+    {
+    }
+
+    public function beforeController(string $controllerName, string $action, array $params)
+    {
+    }
+
+    public function afterController(string $controllerName, string $action, array $params)
+    {
+    }
+
+    public function handleException(Throwable $exception)
+    {
+    }
+
+}
+</code></pre>
               
             </div>
           </div><footer>

@@ -146,6 +146,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Migrations</a>
@@ -182,6 +188,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extension/table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -211,68 +235,56 @@
 <p>Zarządzanie danymi z folderu <code>storage/</code> wewnątrz aplikacji</p>
 <h2 id="namespace">Namespace</h2>
 <p>Klasa:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Storage</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\framework\Storage
+</code></pre>
 <h2 id="zmienne">Zmienne</h2>
 <ul>
 <li><strong>protected string $basePath</strong>: Ścieżka do folderu wewnątrz <code>storage/</code></li>
 </ul>
 <h2 id="metody">Metody</h2>
 <h3 id="set">set</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function put(string $filePath, string $content): true</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function put(string $filePath, string $content): true
+</code></pre>
 <p>Zapisuje plik w folderze z podaną zawartością</p>
 <h3 id="append">append</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function append(string $filePath, string $content, string $append = PHP_EOL): true</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function append(string $filePath, string $content, string $append = PHP_EOL): true
+</code></pre>
 <p>Dopisuje zawartość do pliku</p>
 <h3 id="get">get</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function get(string $filePath): ?string</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function get(string $filePath): ?string
+</code></pre>
 <p>Pobiera zawartość pliku</p>
 <h3 id="delete">delete</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function delete(string $filePath): bool</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function delete(string $filePath): bool
+</code></pre>
 <p>Usuwa plik`</p>
 <h3 id="exists">exists</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function exists(string $filePath): bool</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function exists(string $filePath): bool
+</code></pre>
 <p>Sprawdza, czy plik istnieje</p>
 <h3 id="listfiles">listFiles</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function listFiles(): array</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function listFiles(): array
+</code></pre>
 <p>Zwraca listę plików w folderze</p>
 <h3 id="getfullpath">getFullPath</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function getFullPath(string $filePath): string</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function getFullPath(string $filePath): string
+</code></pre>
 <p>Zwraca pełną ścieżkę do pliku</p>
 <h3 id="getbasepath">getBasePath</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function copy(string $sourcePath, string $destinationPath): bool</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function copy(string $sourcePath, string $destinationPath): bool
+</code></pre>
 <p>Kopiuje plik z jednej lokalizacji do drugiej</p>
 <h3 id="copy">copy</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function copy(string $sourcePath, string $destinationPath): bool</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function copy(string $sourcePath, string $destinationPath): bool
+</code></pre>
 <p>Kopiuje plik z jednej lokalizacji do drugiej</p>
 <h3 id="move">move</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function move(string $sourcePath, string $destinationPath): bool</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function move(string $sourcePath, string $destinationPath): bool
+</code></pre>
 <p>Przenosi plik z jednej lokalizacji do drugiej</p>
 <h3 id="getmetadata">getMetadata</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function getMetadata(string $filePath): array</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function getMetadata(string $filePath): array
+</code></pre>
 <p>Zwraca metadane pliku</p>
               
             </div>

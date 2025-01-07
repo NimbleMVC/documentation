@@ -114,6 +114,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Migrations</a>
@@ -160,6 +166,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -194,16 +218,15 @@
 <li><strong>bootstrap5</strong></li>
 </ul>
 <h2 id="namespace">Namespace</h2>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\form\Form</span>
-</code></pre></div>
-
+<pre><code class="language-php">Nimblephp\form\Form
+</code></pre>
 <h2 id="zmienne">Zmienne</h2>
 <ul>
 <li><strong>protected array $fields = []</strong> : Tablica pól formularza.</li>
 <li><strong>protected MethodEnum $method = MethodEnum::POST</strong>: Metoda HTTP formularza, domyślnie POST.</li>
 <li><strong>protected ?string $action = null</strong>: Adres URL docelowy formularza.</li>
 <li><strong>protected ?string $id = null</strong>: Identyfikator formularza.</li>
-<li><strong>protected Request $request</strong>: Instancja żądania HTTP.</li>
+<li><strong>protected <a href="/documentation/request/">Request</a> $request</strong>: Instancja żądania HTTP.</li>
 <li><strong>protected array $data = []</strong>: Dane wejściowe formularza.</li>
 <li><strong>protected bool $addLinebreak = true</strong>: Czy dodawać znacznik przełamania linii po każdym polu.</li>
 <li><strong>protected array $validationErrors = []</strong>: Tablica błędów walidacji.</li>
@@ -213,106 +236,87 @@
 </ul>
 <h2 id="metody">Metody</h2>
 <h3 id="__construct">__construct</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function __construct(?string $action = null, MethodEnum $method = MethodEnum::POST)</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function __construct(?string $action = null, MethodEnum $method = MethodEnum::POST)
+</code></pre>
 <p>Inicjalizacja formularza z opcjonalnymi parametrami $action i $method.</p>
 <h3 id="validation">validation</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function validation(array $validations = []): bool</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function validation(array $validations = []): bool
+</code></pre>
 <p>Walidacja danych formularza zgodnie z zasadami przekazanymi jako tablica.</p>
 <h3 id="addfield">addField</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function addField(string $type, ?string $name, ?string $title, array $attributes = [], array $options = []): self</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function addField(string $type, ?string $name, ?string $title, array $attributes = [], array $options = []): self
+</code></pre>
 <p>Dodawanie nowego pola do formularza z określonymi atrybutami i opcjami.</p>
 <h3 id="addinput">addInput</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function addInput(string $name, ?string $title = null, array $attributes = []): self</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function addInput(string $name, ?string $title = null, array $attributes = []): self
+</code></pre>
 <p>Dodawanie standardowego pola tekstowego.</p>
 <h3 id="addfloatinput">addFloatInput</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function addFloatInput(string $name, ?string $title = null, array $attributes = []): self</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function addFloatInput(string $name, ?string $title = null, array $attributes = []): self
+</code></pre>
 <p>Dodawanie standardowego pola <code>number</code>.</p>
 <h3 id="addinputhidden">addInputHidden</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function addInputHidden(string $name, string $value): self</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function addInputHidden(string $name, string $value): self
+</code></pre>
 <p>Dodawanie ukrytego pola tekstowego.</p>
 <h3 id="addtextarea">addTextarea</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function addTextarea(string $name, ?string $title = null, array $attributes = []): self</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function addTextarea(string $name, ?string $title = null, array $attributes = []): self
+</code></pre>
 <p>Dodawanie pola tekstowego typu textarea.</p>
 <h3 id="addselect">addSelect</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function addSelect(string $name, array $options, ?string $selectedKey = null, ?string $title = null, array $attributes = []): self</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function addSelect(string $name, array $options, ?string $selectedKey = null, ?string $title = null, array $attributes = []): self
+</code></pre>
 <p>Tworzenie pola typu select z przekazanymi opcjami.</p>
 <h3 id="render">render</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function render(): string</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function render(): string
+</code></pre>
 <p>Generowanie HTML formularza.</p>
 <h3 id="setid-getid">setId, getId</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function setId(?string $id): void</span>
-<span class="x">public function getId(): ?string</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function setId(?string $id): void
+public function getId(): ?string
+</code></pre>
 <p>Ustawianie i pobieranie identyfikatora formularza.</p>
 <h3 id="onsubmit">onSubmit</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function onSubmit(): bool</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function onSubmit(): bool
+</code></pre>
 <p>Obsługa zdarzenia wysłania formularza.</p>
 <h3 id="renderfield">renderField</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function renderField(array $field): string</span>
-</code></pre></div>
-
+<pre><code class="language-php">protected function renderField(array $field): string
+</code></pre>
 <p>Generowanie pola</p>
 <h3 id="generateattributes">generateAttributes</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function generateAttributes(array $attributes): string</span>
-</code></pre></div>
-
+<pre><code class="language-php">protected function generateAttributes(array $attributes): string
+</code></pre>
 <p>Generowanie atrybutów html</p>
 <h3 id="generatename">generateName</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function generateName(string $name, string $prefix = &#39;&#39;): string</span>
-</code></pre></div>
-
+<pre><code class="language-php">protected function generateName(string $name, string $prefix = ''): string
+</code></pre>
 <p>Generowanie nazwy</p>
 <h3 id="generateid">generateId</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function generateId(string $name): string</span>
-</code></pre></div>
-
+<pre><code class="language-php">protected function generateId(string $name): string
+</code></pre>
 <p>Generowanie ID</p>
 <h3 id="zapisanie-danych">Zapisanie danych</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function setData(array $data): void</span>
-</code></pre></div>
-
+<pre><code class="language-php">protected function setData(array $data): void
+</code></pre>
 <p>Zapisanie danych</p>
 <h3 id="getdatabykey">getDataByKey</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function getDataByKey(?string $name): ?string</span>
-</code></pre></div>
-
+<pre><code class="language-php">protected function getDataByKey(?string $name): ?string
+</code></pre>
 <p>Pobranie danych formularza po kluczu (nazwie)</p>
 <h3 id="preparedata">prepareData</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function prepareData(): bool</span>
-</code></pre></div>
-
+<pre><code class="language-php">protected function prepareData(): bool
+</code></pre>
 <p>Przygotowanie danych</p>
 <h3 id="title">title</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function title(string $title): self</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function title(string $title): self
+</code></pre>
 <p>Tytuł formularza</p>
 <h3 id="startgroup-stopgroup">startGroup, stopGroup</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function startGroup(int $col = 6, array $attributes = []): self</span>
-<span class="x">public function stopGroup(): self</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function startGroup(int $col = 6, array $attributes = []): self
+</code></pre>
+<pre><code class="language-php">public function stopGroup(): self
+</code></pre>
 <p>Rozpoczęcie oraz zakończenie grupy pól</p>
               
             </div>

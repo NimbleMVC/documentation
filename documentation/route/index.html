@@ -75,9 +75,9 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#namespace">Namespace</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#zmienne">Zmienne</a>
-    </li>
     <li class="toctree-l2"><a class="reference internal" href="#zmienne-statyczne">Zmienne statyczne</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#zmienne">Zmienne</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#metody-statyczne">Metody statyczne</a>
         <ul>
@@ -148,6 +148,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Migrations</a>
@@ -184,6 +190,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extension/table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -213,69 +237,58 @@
 <p>Klasa służy do interpretacji żądań URL.</p>
 <h2 id="namespace">Namespace</h2>
 <p>Klasa:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Route</span>
-</code></pre></div>
-
-<p>Interface:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Interfaces\RouteInterface</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\framework\Route
+</code></pre>
+<p>Interfejs:</p>
+<pre><code class="language-PHP">Nimblephp\framework\Interfaces\RouteInterface
+</code></pre>
+<h2 id="zmienne-statyczne">Zmienne statyczne</h2>
+<ul>
+<li><strong>protected static array $routes = []</strong>: Predefiniowane routingi</li>
+</ul>
 <h2 id="zmienne">Zmienne</h2>
 <ul>
 <li><strong>protected ?string $controller'</strong>: Nazwa kontrolera.</li>
 <li><strong>protected ?string $method</strong>: Nazwa metody.</li>
 <li><strong>protected array $params = []</strong>: Parametry.</li>
 </ul>
-<h2 id="zmienne-statyczne">Zmienne statyczne</h2>
-<ul>
-<li><strong>protected static array $routes = []</strong>: Predefiniowane routingi</li>
-</ul>
 <h2 id="metody-statyczne">Metody statyczne</h2>
 <h3 id="addroute">addRoute</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public static function addRoute(string $name, ?string $controller = null, ?string $method = null): void</span>
-</code></pre></div>
-
+<pre><code class="language-php">public static function addRoute(string $name, ?string $controller = null, ?string $method = null): void
+</code></pre>
 <p>Dodanie predefiniowanych routingów</p>
 <h2 id="metody">Metody</h2>
 <h3 id="__construct">__construct</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">__construct(RequestInterface $request)</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">__construct(RequestInterface $request)
+</code></pre>
 <p>Tworzenie instancji routingu.</p>
 <h3 id="getcontroller">getController</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function getController(): string</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function getController(): string
+</code></pre>
 <p>Pobranie nazwy kontrolera.</p>
 <h3 id="setcontroller">setController</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function setController(?string $controller): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function setController(?string $controller): void
+</code></pre>
 <p>Zmiana nazwy kontrolera.</p>
 <h3 id="getmethod">getMethod</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function getMethod(): string</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function getMethod(): string
+</code></pre>
 <p>Pobranie nazwy metody.</p>
 <h3 id="setmethod">setMethod</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function setMethod(?string $method): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function setMethod(?string $method): void
+</code></pre>
 <p>Zmiana nazwy metody.</p>
 <h3 id="getparams">getParams</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function getParams(): array</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function getParams(): array
+</code></pre>
 <p>Pobranie parametrów.</p>
 <h3 id="setparams">setParams</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function setParams(array $params): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function setParams(array $params): void
+</code></pre>
 <p>Zmiana parametrów.</p>
 <h3 id="reload">reload</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function reload(): void</span>
-</code></pre></div>
-
+<pre><code class="language-php">public function reload(): void
+</code></pre>
 <p>Przeładowanie routingu w celu zastosowanie predefiniowanych routingów</p>
               
             </div>

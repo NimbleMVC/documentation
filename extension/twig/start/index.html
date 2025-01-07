@@ -122,6 +122,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Migrations</a>
@@ -158,6 +164,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -187,21 +211,19 @@
                 <h1 id="twig">Twig</h1>
 <p>Widoki z obsługą silnika szablonów Twig</p>
 <h2 id="instalacja">Instalacja</h2>
-<div class="codehilite"><pre><span></span><code>composer<span class="w"> </span>require<span class="w"> </span>nimblephp/twig
-</code></pre></div>
-
+<pre><code class="language-shell">composer require nimblephp/twig
+</code></pre>
 <h2 id="uzycie">Użycie</h2>
 <ol>
 <li>Należy utworzyć plik w folderze <code>View</code> o rozszerzeniu <code>.twig</code> np. <code>test.twig</code></li>
 <li>W metodzie kontrolera dajemy:</li>
 </ol>
-<div class="codehilite"><pre><span></span><code><span class="x">$view = new View(new Twig());</span>
-<span class="x">$view-&gt;render(&#39;test&#39;);</span>
-</code></pre></div>
-
+<pre><code class="language-php">$view = new View(new Twig());
+$view-&gt;render('test');
+</code></pre>
 <h2 id="konfiguracja-env">Konfiguracja .env</h2>
-<div class="codehilite"><pre><span></span><code>TWIG_CACHE=false # czy twig ma tworzyć pliki cache
-</code></pre></div>
+<pre><code class="language-env">TWIG_CACHE=false # czy twig ma tworzyć pliki cache
+</code></pre>
               
             </div>
           </div><footer>

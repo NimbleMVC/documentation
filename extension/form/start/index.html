@@ -114,6 +114,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Migrations</a>
@@ -140,6 +146,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#uzycie">Użycie</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#przesyanie-danych-do-formularza">Przesyłanie danych do formularza</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#inne-szablony">Inne szablony</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#zmiana-jezyka">Zmiana języka</a>
@@ -155,6 +163,24 @@
                 <li class="toctree-l3"><a class="reference internal" href="../form_builder/">FormBuilder</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../ajax/">Ajax</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/filter/">Filter</a>
                 </li>
     </ul>
                 </li>
@@ -189,26 +215,36 @@
                 <h1 id="formularze">Formularze</h1>
 <p>Form to biblioteka umożliwiająca tworzenie i walidowania formularzy</p>
 <h2 id="instalacja">Instalacja</h2>
-<div class="codehilite"><pre><span></span><code>composer<span class="w"> </span>require<span class="w"> </span>nimblephp/form
-</code></pre></div>
-
+<pre><code class="language-shell">composer require nimblephp/form
+</code></pre>
 <h2 id="uzycie">Użycie</h2>
 <p>W kontrolerze utwórz skrypt generujący formularz np.:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">$form = new FormBootstrap();</span>
-<span class="x">$form-&gt;setId(&#39;test_form&#39;);</span>
-<span class="x">$form-&gt;addInput(&#39;name/name&#39;, &#39;Title&#39;);</span>
-<span class="x">$form-&gt;addTextarea(&#39;name/textarea&#39;, &#39;Textarea&#39;, [&#39;value&#39; =&gt; &#39;xxx&#39;]);</span>
-<span class="x">$form-&gt;addField(&#39;checkbox&#39;, &#39;name/checkbox&#39;, &#39;Checkbox&#39;);</span>
-<span class="x">$form-&gt;addSelect(&#39;name/select&#39;, [&#39;a&#39; =&gt; 1, &#39;b&#39; =&gt; 2, &#39;c&#39; =&gt; 3, &#39;d&#39; =&gt; 4, &#39;e&#39; =&gt; 5]);</span>
-<span class="x">$form-&gt;addSubmitButton(&#39;Submit&#39;);</span>
+<pre><code class="language-php">$form = new Form();
+$form-&gt;setId('test_form');
+$form-&gt;addInput('name/name', 'Title');
+$form-&gt;addTextarea('name/textarea', 'Textarea', ['value' =&gt; 'xxx']);
+$form-&gt;addField('checkbox', 'name/checkbox', 'Checkbox');
+$form-&gt;addSelect('name/select', ['a' =&gt; 1, 'b' =&gt; 2, 'c' =&gt; 3, 'd' =&gt; 4, 'e' =&gt; 5]);
+$form-&gt;addSubmitButton('Submit');
 
-<span class="x">if ($form-&gt;onSubmit()) {</span>
-<span class="x">    var_dump(&#39;Submit form&#39;);</span>
-<span class="x">}</span>
+if ($form-&gt;onSubmit()) {
+    var_dump('Submit form');
+}
 
-<span class="x">echo $form-&gt;render();</span>
-</code></pre></div>
+echo $form-&gt;render();
+</code></pre>
+<h2 id="przesyanie-danych-do-formularza">Przesyłanie danych do formularza</h2>
+<pre><code class="language-php">$_POST = [
+    'name' =&gt; [
+        'name' =&gt; 'title'
+    ]
+];
 
+$form = new Form();
+$form-&gt;setId('test_form');
+$form-&gt;addInput('name/name', 'Title'); #wartość &quot;title&quot;
+echo $form-&gt;render();
+</code></pre>
 <h2 id="inne-szablony">Inne szablony</h2>
 <ol>
 <li>Bootstrap 5<blockquote>
@@ -218,8 +254,8 @@
 </ol>
 <h2 id="zmiana-jezyka">Zmiana języka</h2>
 <p>Dostępne języki: EN (domyślnie), PL</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Form::changeLanguage(&#39;PL&#39;);</span>
-</code></pre></div>
+<pre><code class="language-php">Form::changeLanguage('PL');
+</code></pre>
               
             </div>
           </div><footer>

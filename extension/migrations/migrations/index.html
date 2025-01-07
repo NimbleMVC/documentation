@@ -114,6 +114,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" >Migrations</a>
@@ -160,6 +166,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -191,46 +215,39 @@
 <p>Klasa zarządza procesem migracji bazy danych.</p>
 <h2 id="namespace">Namespace</h2>
 <p>Klasa:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\migrations\Migrations</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\migrations\Migrations
+</code></pre>
 <h2 id="wasciwosci">Właściwości</h2>
 <ul>
-<li><strong>$projectPath</strong>: Ścieżka do projektu.</li>
-<li><strong>$migrationsPath</strong>: Ścieżka do katalogu migracji.</li>
-<li><strong>$migrationList</strong>: Lista plików migracji.</li>
-<li><strong>$migrationTable</strong>: Instancja tabeli migracji.</li>
+<li><strong>protected string $projectPath</strong>: Ścieżka do projektu.</li>
+<li><strong>protected string $migrationsPath</strong>: Ścieżka do katalogu migracji.</li>
+<li><strong>protected array $migrationList = []</strong>: Lista plików migracji.</li>
+<li><strong>protected <a href="https://github.com/krzysztofzylka/DatabaseManager/wiki/Table">Table</a> $migrationTable</strong>: Instancja tabeli migracji.</li>
 </ul>
 <h2 id="konstruktor">Konstruktor</h2>
-<div class="codehilite"><pre><span></span><code><span class="x">public function __construct(string $projectPath)</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function __construct(string $projectPath)
+</code></pre>
 <p>Inicjalizuje ścieżki i konfiguracje, łączy z bazą danych, inicjuje tabelę migracji.</p>
 <h2 id="metody">Metody</h2>
 <h3 id="runmigrations">runMigrations</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function runMigrations(): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function runMigrations(): void
+</code></pre>
 <p>Uruchamia wszystkie migracje zdefiniowane w katalogu migracji.</p>
 <h3 id="checkmigrations">checkMigrations</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function checkMigrations(): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">protected function checkMigrations(): void
+</code></pre>
 <p>Sprawdza status istniejących migracji, rzuca wyjątki w przypadku błędów.</p>
 <h3 id="generatemigrationlist">generateMigrationList</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function generateMigrationList(): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">protected function generateMigrationList(): void
+</code></pre>
 <p>Generuje listę plików migracji do wykonania.</p>
 <h3 id="inittable">initTable</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function initTable(): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">protected function initTable(): void
+</code></pre>
 <p>Inicjuje tabelę migracji w bazie danych.</p>
 <h3 id="connectdatabase">connectDatabase</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function connectDatabase(): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">protected function connectDatabase(): void
+</code></pre>
 <p>Łączy z bazą danych używając konfiguracji.</p>
               
             </div>

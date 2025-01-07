@@ -91,7 +91,7 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#bootstrap">bootstrap</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#bootstrap_1">bootstrap</a>
+    <li class="toctree-l3"><a class="reference internal" href="#errorcatcher">errorCatcher</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#autocreator">autoCreator</a>
     </li>
@@ -152,6 +152,12 @@
                 </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" >Przykłady</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/twig/examples/example1/">Integracja strony z twig</a>
+                </li>
+    </ul>
+                </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Migrations</a>
@@ -188,6 +194,24 @@
                 </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" >Table</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../extension/table/start/">Instalacja</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Dokumentacja</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/table/">Table</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/cell/">Cell</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/column/">Column</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../extension/table/filter/">Filter</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
               </ul>
       </div>
     </div>
@@ -217,91 +241,75 @@
 <p>Kernel to główny komponent systemu, który koordynuje ogólne operacje aplikacji, takie jak obsługa żądań, routing, inicjalizacja konfiguracji i zarządzanie połączeniami z bazą danych. Stanowi centralny punkt zarządzania przepływem aplikacji.</p>
 <h2 id="namespace">Namespace</h2>
 <p>Klasa:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Kernel</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\framework\Kernel
+</code></pre>
 <p>Interface:</p>
-<div class="codehilite"><pre><span></span><code><span class="x">Nimblephp\framework\Interfaces\KernelInterface</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">Nimblephp\framework\Interfaces\KernelInterface
+</code></pre>
 <h2 id="zmienne">Zmienne</h2>
 <ul>
 <li><strong>public static string $projectPath</strong>: Podstawowa ścieżka katalogu projektu.</li>
-<li><strong>protected RouteInterface $router</strong>: Instancja routera obsługującego routing żądania.</li>
-<li><strong>protected RequestInterface $request</strong>: Instancja zarządzająca żądaniami.</li>
-<li><strong>protected ResponseInterface $response</strong>: Instancja zarządzająca odpowiedziami.</li>
-<li><strong>protected MiddlewareInterface $middleware</strong>: Instancja middleware.</li>
+<li><strong>protected <a href="/documentation/route/">RouteInterface</a> $router</strong>: Instancja routera obsługującego routing żądania.</li>
+<li><strong>protected <a href="/documentation/request/">RequestInterface</a> $request</strong>: Instancja zarządzająca żądaniami.</li>
+<li><strong>protected <a href="/documentation/response/">ResponseInterface</a> $response</strong>: Instancja zarządzająca odpowiedziami.</li>
+<li><strong>protected <a href="/documentation/middleware/">MiddlewareInterface</a> $middleware</strong>: Instancja middleware.</li>
 </ul>
 <h2 id="metody">Metody</h2>
 <h3 id="konstruktor">Konstruktor</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function __construct(RouteInterface $router)</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">public function __construct(RouteInterface $router)
+</code></pre>
 <p>Inicjalizuje Kernel z podanym routerem, żądaniem i odpowiedzią. Ustawia także podstawową ścieżkę projektu.</p>
 <h3 id="getprojectpath">getProjectPath</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function getProjectPath(): string</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">protected function getProjectPath(): string
+</code></pre>
 <p>Zwraca rzeczywistą ścieżkę katalogu projektu.</p>
 <h3 id="handle">handle</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function handle(): void</span>
-</code></pre></div>
-
-<p>Uruchamia aplikację, wykonując kolejno metodę bootstrap oraz loadController. Obsługuje także wyjątki zgłaszane w tych metodach.</p>
+<pre><code class="language-PHP">public function handle(): void
+</code></pre>
+<p>Uruchamia aplikację, wykonując kolejno metodę <a href="#bootstrap">bootstrap</a> oraz <a href="#loadcontroller">loadController</a>. Obsługuje także wyjątki zgłaszane w tych metodach.</p>
 <h3 id="loadconfiguration">loadConfiguration</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">public function loadConfiguration(): void</span>
-</code></pre></div>
-
-<p>Ładuje konfigurację z plików .env, obsługując zarówno domyślną konfigurację jak i specyficzną dla środowiska.</p>
+<pre><code class="language-PHP">public function loadConfiguration(): void
+</code></pre>
+<p>Ładuje <a href="/default-config/">konfigurację</a> z plików .env, obsługując zarówno domyślną konfigurację jak i specyficzną dla środowiska.</p>
 <h3 id="bootstrap">bootstrap</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function bootstrap(): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">protected function bootstrap(): void
+</code></pre>
 <p>Inicjuje sesję, łączy z bazą danych i wykonuje auto-loader klas.</p>
-<h3 id="bootstrap_1">bootstrap</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function errorCatcher(): void</span>
-</code></pre></div>
-
+<h3 id="errorcatcher">errorCatcher</h3>
+<pre><code class="language-PHP">protected function errorCatcher(): void
+</code></pre>
 <p>Metoda ma wyłapywać i zapisywać do logów błędy</p>
 <h3 id="autocreator">autoCreator</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function autoCreator(): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">protected function autoCreator(): void
+</code></pre>
 <p>Tworzy niezbędne katalogi w projekcie, jeśli nie istnieją.</p>
 <h3 id="initializesession">initializeSession</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function initializeSession(): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">protected function initializeSession(): void
+</code></pre>
 <p>Inicjalizuje sesję użytkownika.</p>
 <h3 id="connecttodatabase">connectToDatabase</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function connectToDatabase(): void</span>
-</code></pre></div>
-
-<p>Łączy z bazą danych, używając konfiguracji z plików .env.</p>
+<pre><code class="language-PHP">protected function connectToDatabase(): void
+</code></pre>
+<p>Łączy z bazą danych, używając <a href="/default-config">konfiguracji</a> z plików .env.</p>
 <h3 id="autoloader">autoloader</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function autoloader(): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">protected function autoloader(): void
+</code></pre>
 <p>Auto-loader dla klas projektu, ładuje klasy na podstawie namespace.</p>
 <h3 id="loadcontroller">loadController</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function loadController(): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">protected function loadController(): void
+</code></pre>
 <p>Ładuje i wykonuje kontroler na podstawie danych z routera.</p>
 <h3 id="handleexception">handleException</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function handleException(Throwable $exception): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">protected function handleException(Throwable $exception): void
+</code></pre>
 <p>Obsługuje wyjątki zgłaszane podczas działania aplikacji, logując je i w zależności od konfiguracji, wyświetlając informacje o błędzie.</p>
 <h3 id="debug">debug</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function debug(): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">protected function debug(): void
+</code></pre>
 <p>Ustawienia dotyczące wyświetlania błędów, jeśli opcja debugowania jest włączona.</p>
 <h3 id="loadmodules">loadModules</h3>
-<div class="codehilite"><pre><span></span><code><span class="x">protected function loadModules(): void</span>
-</code></pre></div>
-
+<pre><code class="language-PHP">protected function loadModules(): void
+</code></pre>
 <p>Załadowywanie oraz początkowa inicjalizacja modułów</p>
               
             </div>
