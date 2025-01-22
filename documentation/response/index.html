@@ -270,8 +270,11 @@
 <h3 id="send">send</h3>
 <pre><code class="language-PHP">public function send(bool $flush = false): void
 </code></pre>
+<div style="border: 1px solid #AAA; padding: 8px; margin-bottom: 8px;">
+<b>Argumenty</b><br />
+<b>bool $flush = false</b>: Pozwala od razu zwrócić treść wraz z exitem i wyczyszczeniem poprzedniej treści
+</div>
 <p>Wysłanie odpowiedzi do klienta, wraz z nagłówkami i treścią.</p>
-<p><code>$flush</code> - pozwala od razu zwrócić treść wraz z exitem i wyczyszczeniem poprzedniej treści</p>
 <h3 id="redirect">redirect</h3>
 <pre><code class="language-php">public function redirect(string $url, int $statusCode = 302): never
 </code></pre>

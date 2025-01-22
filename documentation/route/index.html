@@ -83,6 +83,8 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#addroute">addRoute</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getroute">getRoute</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#metody">Metody</a>
@@ -257,6 +259,10 @@
 <pre><code class="language-php">public static function addRoute(string $name, ?string $controller = null, ?string $method = null): void
 </code></pre>
 <p>Dodanie predefiniowanych routingów</p>
+<h3 id="getroute">getRoute</h3>
+<pre><code class="language-php">public static function getRoutes(): array
+</code></pre>
+<p>Pobranie routingów</p>
 <h2 id="metody">Metody</h2>
 <h3 id="__construct">__construct</h3>
 <pre><code class="language-PHP">__construct(RequestInterface $request)

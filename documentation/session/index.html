@@ -81,6 +81,12 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#namespace">Namespace</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#metody-statyczne">Metody statyczne</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#init">init</a>
+    </li>
+        </ul>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#metody">Metody</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#konstruktor">Konstruktor</a>
@@ -230,25 +236,30 @@
 <p>Interfejs:</p>
 <pre><code class="language-PHP">Nimblephp\framework\Interfaces\SessionInterface
 </code></pre>
+<h2 id="metody-statyczne">Metody statyczne</h2>
+<h3 id="init">init</h3>
+<pre><code class="language-php">public static function init(): void
+</code></pre>
+<p>Inicjalizacja sesji</p>
 <h2 id="metody">Metody</h2>
 <h3 id="konstruktor">Konstruktor</h3>
 <pre><code class="language-PHP">public function __construct()
 </code></pre>
 <p>Inicjalizuje sesję, jeśli jeszcze nie została uruchomiona.</p>
 <h3 id="set">set</h3>
-<pre><code class="language-PHP">public function set($key, $value): void
+<pre><code class="language-PHP">public function set(string $key, mixed $value): void
 </code></pre>
 <p>Ustawia wartość w sesji pod określonym kluczem.</p>
 <h3 id="get">get</h3>
-<pre><code class="language-PHP">public function get($key): mixed
+<pre><code class="language-PHP">public function get(string $key): mixed
 </code></pre>
 <p>Pobiera wartość z sesji dla podanego klucza, zwraca null jeśli klucz nie istnieje.</p>
 <h3 id="exists">exists</h3>
-<pre><code class="language-PHP">public function exists($key): bool
+<pre><code class="language-PHP">public function exists(string $key): bool
 </code></pre>
 <p>Sprawdza, czy w sesji istnieje wartość przypisana do danego klucza.</p>
 <h3 id="remove">remove</h3>
-<pre><code class="language-PHP">public function remove($key): void
+<pre><code class="language-PHP">public function remove(string $key): void
 </code></pre>
 <p>Usuwa element z sesji pod określonym kluczem.</p>
 <h3 id="destroy">destroy</h3>

@@ -78,6 +78,12 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#phpdoc">PHPDoc</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#wyaczenie-wejscia-do-metody-z-poziomu-klienta">Wyłączenie wejścia do metody z poziomu klienta</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wejscie-tylko-z-requestow-ajax">Wejście tylko z requestów AJAX</a>
+    </li>
+        </ul>
     </li>
     </ul>
                   </li>
@@ -231,8 +237,8 @@
 <li><strong>public string $name</strong>: Nazwa załadowanego kontrolera.</li>
 <li><strong>public string $action</strong>: Nazwa wywołanej akcji.</li>
 <li><strong>public array $models</strong>: Lista załadowanych modeli.</li>
-<li><strong>public <a href="/documentation/response/">ResponseInterface</a> $response</strong>: Instancja Response</li>
-<li><strong>public <a href="/documentation/request/">RequestInterface</a> $request</strong>: Instancja Request</li>
+<li><strong>public <a href="../response/">ResponseInterface</a> $response</strong>: Instancja Response</li>
+<li><strong>public <a href="../request/">RequestInterface</a> $request</strong>: Instancja Request</li>
 </ul>
 <h2 id="metody">Metody</h2>
 <h3 id="loadmodel">loadModel</h3>
@@ -263,14 +269,20 @@ $this-&gt;TestowyModel-&gt;...
 <h3 id="afterconstruct">afterConstruct</h3>
 <pre><code class="language-PHP">public function afterConstruct(): void
 </code></pre>
-<p>Metoda jest inicjowania po utworzeniu i skonfigurowaniu kontrolera w metodze <a href="/documentation/kernel/#loadController">loadController</a> w <a href="/documentation/kernel/">Kernel</a></p>
+<p>Metoda jest inicjowania po utworzeniu i skonfigurowaniu kontrolera w metodze <a href="../kernel/#loadcontroller">loadController</a> w <a href="../kernel/">Kernel</a></p>
 <h2 id="phpdoc">PHPDoc</h2>
-<p>Poniżej znajdują się funkccje phpdoc dla kontrolera</p>
+<h3 id="wyaczenie-wejscia-do-metody-z-poziomu-klienta">Wyłączenie wejścia do metody z poziomu klienta</h3>
 <pre><code class="language-PHP">/**
- * @action false
+ *  @action disabled
  */
 </code></pre>
 <p>Pozwalają one na wyłączenie akcji dla kontrolera, co oznacza, że nie można wywołać tej akcji z poziomu przeglądarki.</p>
+<h3 id="wejscie-tylko-z-requestow-ajax">Wejście tylko z requestów AJAX</h3>
+<pre><code class="language-PHP">/**
+ * @type ajax
+ */
+</code></pre>
+<p>Zawartość zostanie zwrócona tylko gdy zaptanie przyjdzie z poziomu AJAX, walidowane jest to metodą <a href="../request/#isajax">isAjax z klasy Request</a></p>
               
             </div>
           </div><footer>
